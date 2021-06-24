@@ -54,3 +54,13 @@ C:\Users\horte\source\repos\GOF_59\G\G\obj\Debug\G.csproj.GenerateResource.cache
 C:\Users\horte\source\repos\GOF_59\G\G\obj\Debug\G.csproj.CoreCompileInputs.cache
 C:\Users\horte\source\repos\GOF_59\G\G\obj\Debug\G.exe
 C:\Users\horte\source\repos\GOF_59\G\G\obj\Debug\G.pdb
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\bin\Debug\G.exe.config
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\bin\Debug\G.exe
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\bin\Debug\G.pdb
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\obj\Debug\G.GOF_59.resources
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\obj\Debug\G.Properties.Resources.resources
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\obj\Debug\G.csproj.GenerateResource.cache
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\obj\Debug\G.csproj.CoreCompileInputs.cache
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\obj\Debug\G.exe
+C:\Users\horte\source\repos\Hortencioisaque\GOF_59\G\obj\Debug\G.pdb
+C:\Users\horte\Source\Repos\Hortencioisaque\GOF_59\G\obj\Debug\G.csproj.AssemblyReference.cache

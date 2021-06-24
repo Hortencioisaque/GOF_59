@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GOF_59));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Settings = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button32 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.buttonDeleteExpensesCategory = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.exp6 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
             this.button23 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.submitExpBTN = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.comboBox16 = new System.Windows.Forms.ComboBox();
             this.comboBox17 = new System.Windows.Forms.ComboBox();
@@ -59,15 +59,15 @@
             this.label47 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.exp5 = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.exp4 = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.exp3 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.exp2 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.exp1 = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
             this.comboBoxExpensesCompanies = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -185,7 +185,8 @@
             this.Emp8 = new System.Windows.Forms.TextBox();
             this.Emp6 = new System.Windows.Forms.TextBox();
             this.Emp1 = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.Settings.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -201,23 +202,24 @@
             this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // Settings
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.ItemSize = new System.Drawing.Size(90, 35);
-            this.tabControl1.Location = new System.Drawing.Point(1, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1294, 655);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.Tag = "";
+            this.Settings.Controls.Add(this.tabPage1);
+            this.Settings.Controls.Add(this.tabPage3);
+            this.Settings.Controls.Add(this.tabPage4);
+            this.Settings.Controls.Add(this.tabPage2);
+            this.Settings.Controls.Add(this.tabPage5);
+            this.Settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Settings.ItemSize = new System.Drawing.Size(90, 35);
+            this.Settings.Location = new System.Drawing.Point(1, 2);
+            this.Settings.Name = "Settings";
+            this.Settings.SelectedIndex = 0;
+            this.Settings.Size = new System.Drawing.Size(1294, 702);
+            this.Settings.TabIndex = 0;
+            this.Settings.Tag = "";
             // 
             // tabPage1
             // 
@@ -226,21 +228,21 @@
             this.tabPage1.Controls.Add(this.button31);
             this.tabPage1.Controls.Add(this.buttonDeleteExpensesCategory);
             this.tabPage1.Controls.Add(this.label48);
-            this.tabPage1.Controls.Add(this.textBox20);
+            this.tabPage1.Controls.Add(this.exp6);
             this.tabPage1.Controls.Add(this.panel7);
-            this.tabPage1.Controls.Add(this.button24);
+            this.tabPage1.Controls.Add(this.submitExpBTN);
             this.tabPage1.Controls.Add(this.panel6);
             this.tabPage1.Controls.Add(this.richTextBox3);
             this.tabPage1.Controls.Add(this.label37);
-            this.tabPage1.Controls.Add(this.textBox23);
+            this.tabPage1.Controls.Add(this.exp5);
             this.tabPage1.Controls.Add(this.label36);
-            this.tabPage1.Controls.Add(this.textBox22);
+            this.tabPage1.Controls.Add(this.exp4);
             this.tabPage1.Controls.Add(this.label35);
-            this.tabPage1.Controls.Add(this.textBox21);
+            this.tabPage1.Controls.Add(this.exp3);
             this.tabPage1.Controls.Add(this.label34);
-            this.tabPage1.Controls.Add(this.textBox19);
+            this.tabPage1.Controls.Add(this.exp2);
             this.tabPage1.Controls.Add(this.label33);
-            this.tabPage1.Controls.Add(this.textBox18);
+            this.tabPage1.Controls.Add(this.exp1);
             this.tabPage1.Controls.Add(this.button15);
             this.tabPage1.Controls.Add(this.comboBoxExpensesCompanies);
             this.tabPage1.Controls.Add(this.label30);
@@ -253,7 +255,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1286, 612);
+            this.tabPage1.Size = new System.Drawing.Size(1286, 659);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Expenses";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -304,12 +306,12 @@
             this.label48.TabIndex = 78;
             this.label48.Text = "Date Of Billing";
             // 
-            // textBox20
+            // exp6
             // 
-            this.textBox20.Location = new System.Drawing.Point(313, 315);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(382, 26);
-            this.textBox20.TabIndex = 8;
+            this.exp6.Location = new System.Drawing.Point(313, 315);
+            this.exp6.Name = "exp6";
+            this.exp6.Size = new System.Drawing.Size(382, 26);
+            this.exp6.TabIndex = 8;
             // 
             // panel7
             // 
@@ -330,9 +332,9 @@
             this.label41.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label41.Location = new System.Drawing.Point(94, 9);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(352, 25);
+            this.label41.Size = new System.Drawing.Size(384, 25);
             this.label41.TabIndex = 75;
-            this.label41.Text = "Enter Bill Reference before click";
+            this.label41.Text = "Enter Bill Reference before clicking";
             // 
             // button23
             // 
@@ -367,17 +369,17 @@
             this.button25.Text = "EDIT Record";
             this.button25.UseVisualStyleBackColor = false;
             // 
-            // button24
+            // submitExpBTN
             // 
-            this.button24.BackColor = System.Drawing.Color.OliveDrab;
-            this.button24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button24.Location = new System.Drawing.Point(312, 349);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(231, 75);
-            this.button24.TabIndex = 9;
-            this.button24.Text = "SUBMIT";
-            this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
+            this.submitExpBTN.BackColor = System.Drawing.Color.OliveDrab;
+            this.submitExpBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.submitExpBTN.Location = new System.Drawing.Point(312, 349);
+            this.submitExpBTN.Name = "submitExpBTN";
+            this.submitExpBTN.Size = new System.Drawing.Size(231, 75);
+            this.submitExpBTN.TabIndex = 9;
+            this.submitExpBTN.Text = "SUBMIT";
+            this.submitExpBTN.UseVisualStyleBackColor = false;
+            this.submitExpBTN.Click += new System.EventHandler(this.button24_Click);
             // 
             // panel6
             // 
@@ -396,23 +398,23 @@
             this.panel6.Controls.Add(this.comboBox15);
             this.panel6.Controls.Add(this.label46);
             this.panel6.Controls.Add(this.label47);
-            this.panel6.Location = new System.Drawing.Point(4, 441);
+            this.panel6.Location = new System.Drawing.Point(726, 13);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1264, 175);
+            this.panel6.Size = new System.Drawing.Size(542, 305);
             this.panel6.TabIndex = 70;
             // 
             // comboBox16
             // 
             this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(47, 43);
+            this.comboBox16.Location = new System.Drawing.Point(28, 43);
             this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(163, 28);
+            this.comboBox16.Size = new System.Drawing.Size(232, 28);
             this.comboBox16.TabIndex = 0;
             // 
             // comboBox17
             // 
             this.comboBox17.FormattingEnabled = true;
-            this.comboBox17.Location = new System.Drawing.Point(443, 43);
+            this.comboBox17.Location = new System.Drawing.Point(27, 113);
             this.comboBox17.Name = "comboBox17";
             this.comboBox17.Size = new System.Drawing.Size(233, 28);
             this.comboBox17.TabIndex = 2;
@@ -421,7 +423,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label42.Location = new System.Drawing.Point(440, 20);
+            this.label42.Location = new System.Drawing.Point(29, 88);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(154, 20);
             this.label42.TabIndex = 75;
@@ -430,7 +432,7 @@
             // button27
             // 
             this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.Location = new System.Drawing.Point(931, 119);
+            this.button27.Location = new System.Drawing.Point(340, 250);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(50, 36);
             this.button27.TabIndex = 6;
@@ -441,25 +443,25 @@
             // 
             this.label43.AutoSize = true;
             this.label43.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label43.Location = new System.Drawing.Point(43, 106);
+            this.label43.Location = new System.Drawing.Point(29, 236);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(248, 20);
+            this.label43.Size = new System.Drawing.Size(272, 20);
             this.label43.TabIndex = 73;
-            this.label43.Text = "Select a folder to send the to:";
+            this.label43.Text = "Select a Location to save the file";
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(40, 129);
+            this.textBox27.Location = new System.Drawing.Point(28, 259);
             this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(885, 26);
+            this.textBox27.Size = new System.Drawing.Size(306, 26);
             this.textBox27.TabIndex = 5;
             // 
             // button28
             // 
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(995, 94);
+            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
+            this.button28.Location = new System.Drawing.Point(418, 225);
             this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(263, 61);
+            this.button28.Size = new System.Drawing.Size(110, 61);
             this.button28.TabIndex = 7;
             this.button28.Text = "Get Expenses";
             this.button28.UseVisualStyleBackColor = true;
@@ -467,7 +469,7 @@
             // comboBox13
             // 
             this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(711, 43);
+            this.comboBox13.Location = new System.Drawing.Point(295, 113);
             this.comboBox13.Name = "comboBox13";
             this.comboBox13.Size = new System.Drawing.Size(233, 28);
             this.comboBox13.TabIndex = 3;
@@ -476,7 +478,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label44.Location = new System.Drawing.Point(718, 20);
+            this.label44.Location = new System.Drawing.Point(302, 90);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(152, 20);
             this.label44.TabIndex = 71;
@@ -485,16 +487,16 @@
             // comboBox14
             // 
             this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(245, 43);
+            this.comboBox14.Location = new System.Drawing.Point(293, 43);
             this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(163, 28);
+            this.comboBox14.Size = new System.Drawing.Size(233, 28);
             this.comboBox14.TabIndex = 1;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
             this.label45.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label45.Location = new System.Drawing.Point(254, 20);
+            this.label45.Location = new System.Drawing.Point(302, 20);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(73, 20);
             this.label45.TabIndex = 69;
@@ -503,16 +505,16 @@
             // comboBox15
             // 
             this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(979, 43);
+            this.comboBox15.Location = new System.Drawing.Point(28, 181);
             this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(238, 28);
+            this.comboBox15.Size = new System.Drawing.Size(232, 28);
             this.comboBox15.TabIndex = 4;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label46.Location = new System.Drawing.Point(982, 20);
+            this.label46.Location = new System.Drawing.Point(29, 158);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(137, 20);
             this.label46.TabIndex = 65;
@@ -522,7 +524,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label47.Location = new System.Drawing.Point(48, 20);
+            this.label47.Location = new System.Drawing.Point(29, 20);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(94, 20);
             this.label47.TabIndex = 66;
@@ -530,9 +532,9 @@
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(726, 15);
+            this.richTextBox3.Location = new System.Drawing.Point(23, 441);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(542, 305);
+            this.richTextBox3.Size = new System.Drawing.Size(1245, 212);
             this.richTextBox3.TabIndex = 10;
             this.richTextBox3.Text = "";
             // 
@@ -546,12 +548,12 @@
             this.label37.TabIndex = 68;
             this.label37.Text = "Gross Amount";
             // 
-            // textBox23
+            // exp5
             // 
-            this.textBox23.Location = new System.Drawing.Point(313, 263);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(382, 26);
-            this.textBox23.TabIndex = 7;
+            this.exp5.Location = new System.Drawing.Point(313, 263);
+            this.exp5.Name = "exp5";
+            this.exp5.Size = new System.Drawing.Size(382, 26);
+            this.exp5.TabIndex = 7;
             // 
             // label36
             // 
@@ -563,12 +565,12 @@
             this.label36.TabIndex = 66;
             this.label36.Text = "Tax Amount";
             // 
-            // textBox22
+            // exp4
             // 
-            this.textBox22.Location = new System.Drawing.Point(312, 207);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(382, 26);
-            this.textBox22.TabIndex = 6;
+            this.exp4.Location = new System.Drawing.Point(312, 207);
+            this.exp4.Name = "exp4";
+            this.exp4.Size = new System.Drawing.Size(382, 26);
+            this.exp4.TabIndex = 6;
             // 
             // label35
             // 
@@ -580,12 +582,12 @@
             this.label35.TabIndex = 64;
             this.label35.Text = "NET - Bill Amount";
             // 
-            // textBox21
+            // exp3
             // 
-            this.textBox21.Location = new System.Drawing.Point(312, 151);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(382, 26);
-            this.textBox21.TabIndex = 5;
+            this.exp3.Location = new System.Drawing.Point(312, 151);
+            this.exp3.Name = "exp3";
+            this.exp3.Size = new System.Drawing.Size(382, 26);
+            this.exp3.TabIndex = 5;
             // 
             // label34
             // 
@@ -597,12 +599,12 @@
             this.label34.TabIndex = 62;
             this.label34.Text = "Bill Reference";
             // 
-            // textBox19
+            // exp2
             // 
-            this.textBox19.Location = new System.Drawing.Point(312, 95);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(382, 26);
-            this.textBox19.TabIndex = 4;
+            this.exp2.Location = new System.Drawing.Point(312, 95);
+            this.exp2.Name = "exp2";
+            this.exp2.Size = new System.Drawing.Size(382, 26);
+            this.exp2.TabIndex = 4;
             // 
             // label33
             // 
@@ -614,12 +616,12 @@
             this.label33.TabIndex = 60;
             this.label33.Text = "Info";
             // 
-            // textBox18
+            // exp1
             // 
-            this.textBox18.Location = new System.Drawing.Point(312, 39);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(382, 26);
-            this.textBox18.TabIndex = 3;
+            this.exp1.Location = new System.Drawing.Point(312, 39);
+            this.exp1.Name = "exp1";
+            this.exp1.Size = new System.Drawing.Size(382, 26);
+            this.exp1.TabIndex = 3;
             // 
             // button15
             // 
@@ -640,6 +642,7 @@
             this.comboBoxExpensesCompanies.Name = "comboBoxExpensesCompanies";
             this.comboBoxExpensesCompanies.Size = new System.Drawing.Size(224, 28);
             this.comboBoxExpensesCompanies.TabIndex = 2;
+            this.comboBoxExpensesCompanies.SelectedIndexChanged += new System.EventHandler(this.comboBoxExpensesCompanies_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -670,6 +673,7 @@
             this.comboBoxbuttonExpensesBill_Type.Name = "comboBoxbuttonExpensesBill_Type";
             this.comboBoxbuttonExpensesBill_Type.Size = new System.Drawing.Size(224, 28);
             this.comboBoxbuttonExpensesBill_Type.TabIndex = 1;
+            this.comboBoxbuttonExpensesBill_Type.SelectedIndexChanged += new System.EventHandler(this.comboBoxbuttonExpensesBill_Type_SelectedIndexChanged);
             // 
             // label31
             // 
@@ -739,7 +743,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1286, 612);
+            this.tabPage3.Size = new System.Drawing.Size(1286, 659);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Incomes";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
@@ -1152,7 +1156,7 @@
             this.tabPage4.Controls.Add(this.panel3);
             this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1286, 612);
+            this.tabPage4.Size = new System.Drawing.Size(1286, 659);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Wages";
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
@@ -1519,7 +1523,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1286, 612);
+            this.tabPage2.Size = new System.Drawing.Size(1286, 659);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Employees";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1870,13 +1874,26 @@
             this.Emp1.Size = new System.Drawing.Size(301, 26);
             this.Emp1.TabIndex = 0;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
+            this.tabPage5.BackColor = System.Drawing.Color.Silver;
+            this.tabPage5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabPage5.Location = new System.Drawing.Point(4, 39);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1286, 659);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Settings";
+            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
             // GOF_59
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1304, 661);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1304, 708);
+            this.Controls.Add(this.Settings);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1884,7 +1901,7 @@
             this.Name = "GOF_59";
             this.Text = "GOF_59";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.Settings.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -1914,7 +1931,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl Settings;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -1987,15 +2004,15 @@
         private System.Windows.Forms.ComboBox comboBoxExpensesCategory;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox exp5;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox exp4;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox exp3;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox exp2;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox exp1;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.ComboBox comboBoxExpensesCompanies;
         private System.Windows.Forms.Label label30;
@@ -2021,7 +2038,7 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button submitExpBTN;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Label label43;
@@ -2046,7 +2063,7 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button buttonDeleteExpensesCategory;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox exp6;
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button33;
         private System.Windows.Forms.RichTextBox richTextBoxEmp;
@@ -2070,6 +2087,7 @@
         private System.Windows.Forms.TextBox Wage1;
         private System.Windows.Forms.ComboBox WageComboBox2;
         private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }
 

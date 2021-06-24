@@ -31,11 +31,6 @@ namespace G
         //***************************************************************************************************************************************************************************************************************************
         private void Form1_Load(object sender, EventArgs e)// On load, displaying 
         {
-
-
-
-
-
             //
             //START of Employees On Load -  ComboBox to show Employees
             //
@@ -80,10 +75,8 @@ namespace G
                             ComboBoxWage.Sorted = true;
                             ListOfNames.Add(strName);
                         }
-
                     }
                 }
-
             }
 
             //
@@ -212,7 +205,6 @@ namespace G
                 //End of collecting from expenses Bill Type
                 //
 
-
             }
 
             //
@@ -225,8 +217,6 @@ namespace G
             //
             //END of Expenses category combo box On Load -ComboBox to show Expenses category, Bill type & Company name
             //
-
-
 
         }
 
@@ -1375,17 +1365,99 @@ namespace G
 
 
         //
-        //Submit buttom
+        //Submit buttom expenses
         //
-
 
         private void button24_Click(object sender, EventArgs e)
         {
-            richTextBox3.AppendText(comboBoxExpensesCategory.Text + Environment.NewLine);
+            richTextBox3.Clear();
+
+            if (comboBoxExpensesCategory.Text == "")
+            {
+                MessageBox.Show("Please Select a Category");
+            }
+            else
+            {
+                if (comboBoxbuttonExpensesBill_Type.Text == "")
+                {
+                    MessageBox.Show("Please Select a Type");
+                }
+                else
+                {
+                    if (comboBoxExpensesCompanies.Text == "")
+                    {
+                        MessageBox.Show("Please Select a Company");
+                    }
+                    else
+                    {
+                        if (exp1.Text == "")
+                        {
+                            MessageBox.Show("Please insert an Info");
+                        }
+                        else
+                        {
+                            if (exp2.Text == "")
+                            {
+                                MessageBox.Show("Please insert The Bill Reference");
+                            }
+                            else
+                            {
+                                if (exp3.Text == "")
+                                {
+                                    MessageBox.Show("Please insert NET - Bill Amount");
+                                }
+                                else
+                                {
+                                    if (exp4.Text == "")
+                                    {
+                                        MessageBox.Show("Please insert Tax Amount");
+                                    }
+                                    else
+                                    {
+                                        if (exp5.Text == "")
+                                        {
+                                            MessageBox.Show("Please insert Gross Amount");
+                                        }
+                                        else
+                                        {
+                                            if (exp6.Text == "")
+                                            {
+                                                MessageBox.Show("Please insert Date of Billing");
+                                            }
+                                            else
+                                            {/*
+                                                comboBoxExpensesCategory.Text
+                                                comboBoxbuttonExpensesBill_Type.Text
+                                                comboBoxExpensesCompanies.Text
+                                                exp1.Text
+                                                exp2.Text
+                                                exp3.Text
+                                                exp4.Text
+                                                exp5.Text
+                                                exp6.Text
+                                             */
+                                                richTextBox3.AppendText(comboBoxExpensesCategory.Text + Environment.NewLine);
+                                                richTextBox3.AppendText(comboBoxbuttonExpensesBill_Type.Text + Environment.NewLine);
+                                                richTextBox3.AppendText(comboBoxExpensesCompanies.Text + Environment.NewLine);
+                                                richTextBox3.AppendText(exp1.Text + Environment.NewLine);
+                                                richTextBox3.AppendText(exp2.Text + Environment.NewLine);
+                                                richTextBox3.AppendText(exp3.Text + Environment.NewLine);
+                                                richTextBox3.AppendText(exp4.Text + Environment.NewLine);
+                                                richTextBox3.AppendText(exp5.Text + Environment.NewLine);
+                                                richTextBox3.AppendText(exp6.Text + Environment.NewLine);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }            
         }
 
         //
-        //END of sSubmit buttom
+        //END of Submit buttom expenses
         //
 
 
@@ -1464,7 +1536,6 @@ namespace G
             }
         }
 
-
         //
         //End of Wage comboBox.
         //
@@ -1478,10 +1549,11 @@ namespace G
             richTextBoxWage.Clear();
 
             List<string> ListOfEntry = new List<string>();
-            string strListOfEntry = String.Empty;
+            string strListOfEntryDateFrom = String.Empty;
+            string strListOfEntryDateTo = String.Empty;
             //Creating a string out of the entries in the all fields to check against the database for duplicates
-            string strCollectedFromTextBox = WageEmployeeID.Text + ComboBoxWage.Text + WageComboBox1.Text + " 00:00:00" + WageComboBox2.Text + " 00:00:00" + Wage1.Text + Wage2.Text;
-
+            string strDateFromComboBox = WageComboBox1.Text + " 00:00:00";
+            string strDateToComboBox = WageComboBox2.Text + " 00:00:00";
 
 
             using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
@@ -1505,8 +1577,6 @@ namespace G
 
                     foreach (DataRow row in table.Rows)
                     {
-
-
                         object ID = row["EmployeeID"];
                         object FullName = row["Employee_Full_Name"];
                         object DateFrom = row["Date_From"];
@@ -1522,19 +1592,20 @@ namespace G
                         string strTotalBeforeTax = TotalBeforeTax.ToString();
 
                         ////Start of Adding all entry to a list to check if the entry exists
-                        strListOfEntry = ID.ToString() + FullName.ToString() + DateFrom.ToString() + DateTo.ToString() + TotalHours.ToString() + TotalBeforeTax.ToString();
+                        strListOfEntryDateFrom = DateFrom.ToString();
+                        strListOfEntryDateTo = DateTo.ToString();
 
-                        if (!ListOfEntry.Contains(strListOfEntry))
+                        if (!ListOfEntry.Contains(strListOfEntryDateFrom))
                         {
-                            ListOfEntry.Add(strListOfEntry);
+                            ListOfEntry.Add(strListOfEntryDateFrom);
+                        }
+                        if (!ListOfEntry.Contains(strListOfEntryDateTo))
+                        {
+                            ListOfEntry.Add(strListOfEntryDateTo);
                         }
                         //End of Adding all entry to a list
 
-
-
-                    }
-
-                                      
+                    }                                      
                     
                     //Start of Adding all items from the database into a list in order to check if new entry already exists.
                     foreach (string ListOfEntries in ListOfEntry)
@@ -1545,9 +1616,9 @@ namespace G
                     // End of Adding all items from the database into a list in order to check if new entry already exists.
 
                     //checking if entry already exists
-                    if (ListOfEntry.Contains(strCollectedFromTextBox))
+                    if (ListOfEntry.Contains(strDateFromComboBox) | ListOfEntry.Contains(strDateToComboBox))
                     {                        
-                        MessageBox.Show("Wage entry already exist");
+                        MessageBox.Show("Date already exist Please choose another date or adit the existing entry");
                     }
                     else //if does not exists  insert into the database.
                     {
@@ -1681,5 +1752,14 @@ namespace G
         { }
         private void EmpID_TextChanged(object sender, EventArgs e)
         { }
+        private void comboBoxbuttonExpensesBill_Type_SelectedIndexChanged(object sender, EventArgs e)
+        { }
+        private void comboBoxExpensesCompanies_SelectedIndexChanged(object sender, EventArgs e)
+        { }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
