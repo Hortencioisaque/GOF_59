@@ -1425,17 +1425,18 @@ namespace G
                                                 MessageBox.Show("Please insert Date of Billing");
                                             }
                                             else
-                                            {/*
-                                                comboBoxExpensesCategory.Text
-                                                comboBoxbuttonExpensesBill_Type.Text
-                                                comboBoxExpensesCompanies.Text
-                                                exp1.Text
-                                                exp2.Text
-                                                exp3.Text
-                                                exp4.Text
-                                                exp5.Text
-                                                exp6.Text
-                                             */
+                                            {
+                                                /*
+                                                   comboBoxExpensesCategory.Text
+                                                   comboBoxbuttonExpensesBill_Type.Text
+                                                   comboBoxExpensesCompanies.Text
+                                                   exp1.Text
+                                                   exp2.Text
+                                                   exp3.Text
+                                                   exp4.Text
+                                                   exp5.Text
+                                                   exp6.Text
+                                                */
                                                 richTextBox3.AppendText(comboBoxExpensesCategory.Text + Environment.NewLine);
                                                 richTextBox3.AppendText(comboBoxbuttonExpensesBill_Type.Text + Environment.NewLine);
                                                 richTextBox3.AppendText(comboBoxExpensesCompanies.Text + Environment.NewLine);
@@ -1445,6 +1446,193 @@ namespace G
                                                 richTextBox3.AppendText(exp4.Text + Environment.NewLine);
                                                 richTextBox3.AppendText(exp5.Text + Environment.NewLine);
                                                 richTextBox3.AppendText(exp6.Text + Environment.NewLine);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
+                                                {
+                                                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses ([Company_EXPENSES_Name],[Category_EXPENSES_Name],[Bill_type_EXPENSES_Name],[Info],[Bill_Ref],[Bill_amount_net],[Bill_amount_after_Tax],[Bill_gross],[Date_of_Billing]) VALUES (?,?,?,?,?,?,?,?,?)", connection))//insert command
+                                                    using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses", connection))
+                                                    {
+                                                        connection.Open();
+
+
+                                                        DataTable table = new DataTable();
+                                                        OleDbDataAdapter adapter = new OleDbDataAdapter();
+                                                        adapter.SelectCommand = selectCommand;
+                                                        adapter.Fill(table);
+
+
+                                                        //
+                                                        //start of checking if entry exists in database
+                                                        //
+                                                        foreach (DataRow row in table.Rows)
+                                                        {
+                                                            object company = row["Company_EXPENSES_Name"];
+                                                            object category = row["Category_EXPENSES_Name"];
+                                                            object billType = row["Bill_type_EXPENSES_Name"];
+                                                            object info = row["Info"];
+                                                            object billRef = row["Bill_Ref"];
+                                                            object amountNet = row["Bill_amount_net"];
+                                                            object amountafterTax = row["Bill_amount_after_Tax"];
+                                                            object grossBill = row["Bill_gross"];
+                                                            object billDate = row["Date_of_Billing"];
+
+                                                            string strCompany = company.ToString();
+                                                            string strCategory = category.ToString();
+                                                            string strBillType = billType.ToString();
+                                                            string strInfo = info.ToString();
+                                                            string strBillRef = billRef.ToString();
+                                                            string strAmountNet = amountNet.ToString();
+                                                            string strAmountafterTax = amountafterTax.ToString();
+                                                            string strGrossBill = grossBill.ToString();
+                                                            string strBillDate = billDate.ToString();
+
+                                                        }
+
+                                                        insertCommand.Parameters.AddWithValue("@Company_EXPENSES_Name", WageEmployeeID.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Category_EXPENSES_Name", ComboBoxWage.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_type_EXPENSES_Name", WageComboBox1.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Info", WageComboBox2.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_Ref", Wage1.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_amount_net", .Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_amount_after_Tax", .Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_gross", .Text);
+                                                        insertCommand.Parameters.AddWithValue("@Date_of_Billing", .Text);
+
+
+                                                        insertCommand.ExecuteNonQuery();
+
+                                                        string strComboNames = Emp1.Text + " " + Emp2.Text + " " + Emp3.Text;
+
+                                                        //
+                                                        //end of inserting into database
+                                                        //
+
+                                                        //
+                                                        //START of Showing what has been added to the database
+                                                        //
+                                                        richTextBox3.AppendText("Details of the New Record Added :    " + Environment.NewLine);
+                                                        richTextBox3.AppendText(Environment.NewLine);
+                                                        richTextBox3.AppendText(WageEmployeeID.Text + "    " + Environment.NewLine);
+                                                        richTextBox3.AppendText(ComboBoxWage.Text + "    " + Environment.NewLine);
+                                                        richTextBox3.AppendText(WageComboBox1.Text + "    " + Environment.NewLine);
+                                                        richTextBox3.AppendText(WageComboBox2.Text + "    " + Environment.NewLine);
+                                                        richTextBox3.AppendText(Wage1.Text + "    " + Environment.NewLine);
+                                                        richTextBox3.AppendText(Wage2.Text + "    " + Environment.NewLine);
+                                                        //
+                                                        //END of Showing what has been added to the database
+                                                        //
+
+                                                        //
+                                                        //end of  inserting into the database.
+                                                        //
+
+                                                    }
+                                                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                             }
                                         }
                                     }
@@ -1453,7 +1641,7 @@ namespace G
                         }
                     }
                 }
-            }            
+            }
         }
 
         //
@@ -1605,8 +1793,8 @@ namespace G
                         }
                         //End of Adding all entry to a list
 
-                    }                                      
-                    
+                    }
+
                     //Start of Adding all items from the database into a list in order to check if new entry already exists.
                     foreach (string ListOfEntries in ListOfEntry)
                     {
@@ -1617,7 +1805,7 @@ namespace G
 
                     //checking if entry already exists
                     if (ListOfEntry.Contains(strDateFromComboBox) | ListOfEntry.Contains(strDateToComboBox))
-                    {                        
+                    {
                         MessageBox.Show("Date already exist Please choose another date or adit the existing entry");
                     }
                     else //if does not exists  insert into the database.
