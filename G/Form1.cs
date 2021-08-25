@@ -37,7 +37,7 @@ namespace G
             //
             //START of Updating ComboBox to show Employees
             //
-            List<string> ListOfNames = new List<string>();
+
             //
             //select command
             //
@@ -49,6 +49,8 @@ namespace G
                 using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Employees", connection))
                 {
                     connection.Open();
+
+                    List<string> ListOfNames = new List<string>();
 
                     DataTable table = new DataTable();
                     OleDbDataAdapter adapter = new OleDbDataAdapter();
@@ -93,9 +95,11 @@ namespace G
             //END of Employees On load -  ComboBox to show Employees
             //
 
-
+            //***********************************************************************************************************************************************************************************************************************
+            //
             //
             //START of Expenses category combo box On Load -  ComboBox to show Expenses category, Bill type & Company name from the database
+            //
             //
             //***********************************************************************************************************************************************************************************************************************
 
@@ -128,6 +132,7 @@ namespace G
                 using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses_Category", connection))
                 {
                     connection.Open();
+                    List<string> ListOfCategory_EXPENSES_Name = new List<string>();
 
                     DataTable table = new DataTable();
                     OleDbDataAdapter adapter = new OleDbDataAdapter();
@@ -139,10 +144,10 @@ namespace G
                         object CategoryNameValue = row["Category_EXPENSES_Name"];
                         string strExpensesCategoryName = CategoryNameValue + "";//
 
-                        if (!ListOfNames.Contains(strExpensesCategoryName))
+                        if (!ListOfCategory_EXPENSES_Name.Contains(strExpensesCategoryName))
                         {
                             comboBoxExpensesCategory.Items.Add(strExpensesCategoryName);//adding items to the comboBox Expenses category Tab
-                            ListOfNames.Add(strExpensesCategoryName);
+                            ListOfCategory_EXPENSES_Name.Add(strExpensesCategoryName);
                         }
 
                     }
@@ -156,6 +161,7 @@ namespace G
                 //
                 using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses_Bill_type", connection))
                 {
+                    List<string> ListOfBill_type_EXPENSES_Name = new List<string>();
 
                     DataTable table = new DataTable();
                     OleDbDataAdapter adapter = new OleDbDataAdapter();
@@ -167,10 +173,10 @@ namespace G
                         object BillTypeNameValue = row["Bill_type_EXPENSES_Name"];
                         string strExpensesBillTypeName = BillTypeNameValue + "";//
 
-                        if (!ListOfNames.Contains(strExpensesBillTypeName))
+                        if (!ListOfBill_type_EXPENSES_Name.Contains(strExpensesBillTypeName))
                         {
                             comboBoxbuttonExpensesBill_Type.Items.Add(strExpensesBillTypeName);//adding items to the comboBox Expenses category Tab
-                            ListOfNames.Add(strExpensesBillTypeName);
+                            ListOfBill_type_EXPENSES_Name.Add(strExpensesBillTypeName);
                         }
                     }
                 }
@@ -183,6 +189,7 @@ namespace G
                 //
                 using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses_Companies", connection))
                 {
+                    List<string> ListOfCompany_EXPENSES_Name = new List<string>();
 
                     DataTable table = new DataTable();
                     OleDbDataAdapter adapter = new OleDbDataAdapter();
@@ -194,10 +201,10 @@ namespace G
                         object CategoryNameValue = row["Company_EXPENSES_Name"];
                         string strExpensesCompanyName = CategoryNameValue + "";//
 
-                        if (!ListOfNames.Contains(strExpensesCompanyName))
+                        if (!ListOfCompany_EXPENSES_Name.Contains(strExpensesCompanyName))
                         {
                             comboBoxExpensesCompanies.Items.Add(strExpensesCompanyName);//adding items to the comboBox Expenses category Tab
-                            ListOfNames.Add(strExpensesCompanyName);
+                            ListOfCompany_EXPENSES_Name.Add(strExpensesCompanyName);
                         }
                     }
                 }
@@ -218,18 +225,153 @@ namespace G
             //END of Expenses category combo box On Load -ComboBox to show Expenses category, Bill type & Company name
             //
 
+
+
+            //***************************************************************************************************************************************************************************************************************************
+            //
+            //
+            //
+            //END of On Load -  showing Expenses category, Bill type & Company name when the program starts
+            //
+            //
+            //
+            //***************************************************************************************************************************************************************************************************************************
+
+            //########
+
+
+            //***********************************************************************************************************************************************************************************************************************
+            //
+            //
+            //START of On Load Income category combo box On Load -  ComboBox to show Expenses Income, Bill type & Company name from the database
+            //
+            //
+            //***********************************************************************************************************************************************************************************************************************
+
+            //START of Updating ComboBox to show Income category
+            //
+            //
+            //select command
+            //
+
+
+
+            comboBoxIncomeCategory.AutoCompleteMode = AutoCompleteMode.Suggest;//ComboBox Auto suggestion when typing first characters 
+            comboBoxIncomeCategory.AutoCompleteSource = AutoCompleteSource.ListItems;//ComboBox Auto suggestion when typing first characters 
+
+
+
+            comboBoxIncomeCategory.Sorted = true;
+
+            using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+            {
+                List<string> ListOfIncome_Category = new List<string>();
+                //
+                //collecting from Income
+                //
+                using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Income_Category", connection))
+                {
+                    connection.Open();
+
+                    DataTable table = new DataTable();
+                    OleDbDataAdapter adapter = new OleDbDataAdapter();
+                    adapter.SelectCommand = selectCommand;
+                    adapter.Fill(table);
+
+                    foreach (DataRow row in table.Rows)
+                    {
+                        object CategoryNameValue = row["Category"];
+                        string strIncomeCategoryName = CategoryNameValue + "";//
+
+                        if (!ListOfIncome_Category.Contains(strIncomeCategoryName))
+                        {
+                            comboBoxIncomeCategory.Items.Add(strIncomeCategoryName);//adding items to the comboBox Income category Tab
+                            ListOfIncome_Category.Add(strIncomeCategoryName);
+                        }
+
+                    }
+                }
+                //
+                //End of collecting from Income Category
+                //
+            }
+            //***********************************************************************************************************************************************************************************************************************
+            //
+            //
+            //END of Income On Loadcategory combo box On Load -  ComboBox to show Expenses Income, Bill type & Company name from the database
+            //
+            //
+            //
+            //***********************************************************************************************************************************************************************************************************************
+
+            //########
+
+
+            //***********************************************************************************************************************************************************************************************************************
+            //
+            //
+            //START of On Load Income Type_Of_Sale combo box On Load -  ComboBox to show Income, Bill type & Company name from the database
+            //
+            //
+            //***********************************************************************************************************************************************************************************************************************
+
+            //START of Updating ComboBox to show Income Type_Of_Sale
+            //
+            //
+            //select command
+            //
+
+
+
+            comboBoxIncomeType_Of_Sale.AutoCompleteMode = AutoCompleteMode.Suggest;//ComboBox Auto suggestion when typing first characters 
+            comboBoxIncomeType_Of_Sale.AutoCompleteSource = AutoCompleteSource.ListItems;//ComboBox Auto suggestion when typing first characters 
+
+
+
+            comboBoxIncomeType_Of_Sale.Sorted = true;
+
+            using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+            {
+                List<string> ListOfIncome_Type_Of_Sale = new List<string>();
+                //
+                //collecting from Income
+                //
+                using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Income_Type_Of_Sale", connection))
+                {
+                    connection.Open();
+
+                    DataTable table = new DataTable();
+                    OleDbDataAdapter adapter = new OleDbDataAdapter();
+                    adapter.SelectCommand = selectCommand;
+                    adapter.Fill(table);
+
+                    foreach (DataRow row in table.Rows)
+                    {
+                        object Type_Of_SaleNameValue = row["Type_Of_Sale"];
+                        string strIncomeType_Of_Sale = Type_Of_SaleNameValue + "";//
+
+                        if (!ListOfIncome_Type_Of_Sale.Contains(strIncomeType_Of_Sale))
+                        {
+                            comboBoxIncomeType_Of_Sale.Items.Add(strIncomeType_Of_Sale);//adding items to the comboBox Income Type_Of_Sale Tab
+                            ListOfIncome_Type_Of_Sale.Add(strIncomeType_Of_Sale);
+                        }
+
+                    }
+                }
+                //
+                //End of collecting from Income Type_Of_Sale
+                //
+            }
+            //***********************************************************************************************************************************************************************************************************************
+            //
+            //
+            //END of Income On Load Type_Of_Sale combo box On Load -  ComboBox to show Income, Bill type & Company name from the database
+            //
+            //
+            //
+            //***********************************************************************************************************************************************************************************************************************
+
         }
-
-        //***************************************************************************************************************************************************************************************************************************
-        //
-        //
-        //
-        //END of On Load -  showing Expenses category, Bill type & Company name when the program starts
-        //
-        //
-        //
-        //***************************************************************************************************************************************************************************************************************************
-
 
         public GOF_59()
         {
@@ -315,7 +457,7 @@ namespace G
                                 insertCommand.Parameters.AddWithValue("@Post_Code", Emp8.Text);
                                 insertCommand.Parameters.AddWithValue("@NINO", Emp9.Text);
                                 insertCommand.Parameters.AddWithValue("@Email", Emp10.Text);
-                                insertCommand.Parameters.AddWithValue("@Start_Date", Emp11.Text);
+                                insertCommand.Parameters.AddWithValue("@Start_Date", Emp11.Value);
                                 insertCommand.Parameters.AddWithValue("Combo_Names", Emp1.Text + " " + Emp2.Text + " " + Emp3.Text);
 
                                 insertCommand.ExecuteNonQuery();
@@ -341,7 +483,7 @@ namespace G
                                 richTextBoxEmp.AppendText(Emp8.Text + "    " + Environment.NewLine);
                                 richTextBoxEmp.AppendText(Emp9.Text + "    " + Environment.NewLine);
                                 richTextBoxEmp.AppendText(Emp10.Text + "    " + Environment.NewLine);
-                                richTextBoxEmp.AppendText(Emp11.Text + "    " + Environment.NewLine);
+                                richTextBoxEmp.AppendText(Emp11.Value + "    " + Environment.NewLine);
                                 //
                                 //END of Showing what has been added to the database
                                 //
@@ -380,7 +522,7 @@ namespace G
             Emp8.Clear();
             Emp9.Clear();
             Emp10.Clear();
-            Emp11.Clear();
+            //Emp11.Clear();
             EmpID.Clear();
             //
             //END of clearing fields and comboBox to update comboBox with new records
@@ -450,7 +592,7 @@ namespace G
             Emp8.Clear();
             Emp9.Clear();
             Emp10.Clear();
-            Emp11.Clear();
+            //Emp11.Clear();
             EmpID.Clear();
 
             if (!String.IsNullOrEmpty(comboBoxEmployees.Text))
@@ -514,7 +656,7 @@ namespace G
                                 Emp8.AppendText(PostCode.ToString());
                                 Emp9.AppendText(Nino.ToString());
                                 Emp10.AppendText(Email.ToString());
-                                Emp11.AppendText(StartDate.ToString());
+                                Emp11.Value = new DateTime(Convert.ToInt64(Convert.ToDecimal(StartDate)));// converting lo long
 
                             }
 
@@ -559,7 +701,7 @@ namespace G
                     updateCommand.Parameters.AddWithValue("@Post_Code", Emp8.Text);
                     updateCommand.Parameters.AddWithValue("@NINO", Emp9.Text);
                     updateCommand.Parameters.AddWithValue("@Email", Emp10.Text);
-                    updateCommand.Parameters.AddWithValue("@Start_Date", Emp11.Text);
+                    updateCommand.Parameters.AddWithValue("@Start_Date", Emp11.Value);
 
                     string strComboNames = Emp1.Text + " " + Emp2.Text + " " + Emp3.Text;
                     updateCommand.Parameters.AddWithValue("@Combo_Names", strComboNames);
@@ -582,7 +724,7 @@ namespace G
                     richTextBoxEmp.AppendText(Emp8.Text + "    " + Environment.NewLine);
                     richTextBoxEmp.AppendText(Emp9.Text + "    " + Environment.NewLine);
                     richTextBoxEmp.AppendText(Emp10.Text + "    " + Environment.NewLine);
-                    richTextBoxEmp.AppendText(Emp11.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(Emp11.Value + "    " + Environment.NewLine);
                     richTextBoxEmp.AppendText(strComboNames + "    " + Environment.NewLine);
 
                     //
@@ -611,7 +753,7 @@ namespace G
             Emp8.Clear();
             Emp9.Clear();
             Emp10.Clear();
-            Emp11.Clear();
+            //Emp11.Clear();
             EmpID.Clear();
             //
             //END of clearing fields and comboBox to update comboBox with new records
@@ -702,7 +844,7 @@ namespace G
             richTextBoxEmp.AppendText(Emp8.Text + "    " + Environment.NewLine);
             richTextBoxEmp.AppendText(Emp9.Text + "    " + Environment.NewLine);
             richTextBoxEmp.AppendText(Emp10.Text + "    " + Environment.NewLine);
-            richTextBoxEmp.AppendText(Emp11.Text + "    " + Environment.NewLine);
+            richTextBoxEmp.AppendText(Emp11.Value + "    " + Environment.NewLine);
             //
             //END of Showing what has been updated into the database
             //
@@ -728,7 +870,7 @@ namespace G
             Emp8.Clear();
             Emp9.Clear();
             Emp10.Clear();
-            Emp11.Clear();
+            //Emp11.Clear();
             EmpID.Clear();
             //
             //END of clearing fields and comboBox to update comboBox with new records
@@ -795,7 +937,7 @@ namespace G
         //***************************************************************************************************************************************************************************************************************************
 
 
-        // ################################################################   END OF Employees   #################################################################################
+        //######
 
 
 
@@ -937,7 +1079,7 @@ namespace G
 
 
         //
-        //Delete expenses category
+        //START of Delete expenses category
         //
 
         private void button30_Click(object sender, EventArgs e)//Delete - expenses category
@@ -1420,91 +1562,85 @@ namespace G
                                         }
                                         else
                                         {
-                                            if (exp6.Text == "")
+                                            using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
                                             {
-                                                MessageBox.Show("Please insert Date of Billing");
-                                            }
-                                            else
-                                            {
-                                                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
+                                                using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses ([Company_EXPENSES_Name],[Category_EXPENSES_Name],[Bill_type_EXPENSES_Name],[Info],[Bill_Ref],[Bill_amount_net],[Bill_amount_after_Tax],[Bill_gross],[Date_of_Billing]) VALUES (?,?,?,?,?,?,?,?,?)", connection))//insert command
+                                                using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses", connection))
                                                 {
-                                                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses ([Company_EXPENSES_Name],[Category_EXPENSES_Name],[Bill_type_EXPENSES_Name],[Info],[Bill_Ref],[Bill_amount_net],[Bill_amount_after_Tax],[Bill_gross],[Date_of_Billing]) VALUES (?,?,?,?,?,?,?,?,?)", connection))//insert command
-                                                    using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses", connection))
+                                                    connection.Open();
+
+                                                    string strBillRef = string.Empty;
+                                                    List<string> ListBillRef = new List<string>();
+
+                                                    DataTable table = new DataTable();
+                                                    OleDbDataAdapter adapter = new OleDbDataAdapter();
+                                                    adapter.SelectCommand = selectCommand;
+                                                    adapter.Fill(table);
+
+
+                                                    //
+                                                    //start of checking if entry exists in database
+                                                    //
+
+                                                    foreach (DataRow row in table.Rows)
                                                     {
-                                                        connection.Open();
+                                                        object billRef = row["Bill_Ref"];
 
-                                                        string strBillRef = string.Empty;
-                                                        List<string> ListBillRef = new List<string>();
+                                                        strBillRef = billRef.ToString();
+                                                        //adding to a list
+                                                        ListBillRef.Add(strBillRef);
+                                                    }
 
-                                                        DataTable table = new DataTable();
-                                                        OleDbDataAdapter adapter = new OleDbDataAdapter();
-                                                        adapter.SelectCommand = selectCommand;
-                                                        adapter.Fill(table);
+                                                    if (ListBillRef.Contains(Emp2.Text))
+                                                    {
+                                                        MessageBox.Show("Expense with this reference already exists");
+
+                                                    }
+                                                    else
+                                                    {
+                                                        insertCommand.Parameters.AddWithValue("@Company_EXPENSES_Name", comboBoxExpensesCategory.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Category_EXPENSES_Name", comboBoxbuttonExpensesBill_Type.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_type_EXPENSES_Name", comboBoxExpensesCompanies.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Info", exp1.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_Ref", exp2.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_amount_net", exp3.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_amount_after_Tax", exp4.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_gross", exp5.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Date_of_Billing", exp6.Value);
+
+
+                                                        insertCommand.ExecuteNonQuery();
 
 
                                                         //
-                                                        //start of checking if entry exists in database
+                                                        //end of inserting into database
                                                         //
 
-                                                        foreach (DataRow row in table.Rows)
-                                                        {
-                                                            object billRef = row["Bill_Ref"];
+                                                        //
+                                                        //START of Showing what has been added to the database
+                                                        //
+                                                        richTextBox3.AppendText("Details of the New Expense Record Added :    " + Environment.NewLine);
+                                                        richTextBox3.AppendText(Environment.NewLine);
+                                                        richTextBox3.AppendText(comboBoxExpensesCategory.Text + Environment.NewLine);
+                                                        richTextBox3.AppendText(comboBoxbuttonExpensesBill_Type.Text + Environment.NewLine);
+                                                        richTextBox3.AppendText(comboBoxExpensesCompanies.Text + Environment.NewLine);
+                                                        richTextBox3.AppendText(exp1.Text + Environment.NewLine);
+                                                        richTextBox3.AppendText(exp2.Text + Environment.NewLine);
+                                                        richTextBox3.AppendText(exp3.Text + Environment.NewLine);
+                                                        richTextBox3.AppendText(exp4.Text + Environment.NewLine);
+                                                        richTextBox3.AppendText(exp5.Text + Environment.NewLine);
+                                                        richTextBox3.AppendText(exp6.Value + Environment.NewLine);
+                                                        //
+                                                        //END of Showing what has been added to the database
+                                                        //
 
-                                                            strBillRef = billRef.ToString();
-                                                            //adding to a list
-                                                            ListBillRef.Add(strBillRef);
-                                                        }
-
-                                                        if (ListBillRef.Contains(Emp2.Text))
-                                                        {
-                                                            MessageBox.Show("Expense with this reference already exists");
-
-                                                        }
-                                                        else
-                                                        {
-                                                            insertCommand.Parameters.AddWithValue("@Company_EXPENSES_Name", comboBoxExpensesCategory.Text);
-                                                            insertCommand.Parameters.AddWithValue("@Category_EXPENSES_Name", comboBoxbuttonExpensesBill_Type.Text);
-                                                            insertCommand.Parameters.AddWithValue("@Bill_type_EXPENSES_Name", comboBoxExpensesCompanies.Text);
-                                                            insertCommand.Parameters.AddWithValue("@Info", exp1.Text);
-                                                            insertCommand.Parameters.AddWithValue("@Bill_Ref", exp2.Text);
-                                                            insertCommand.Parameters.AddWithValue("@Bill_amount_net", exp3.Text);
-                                                            insertCommand.Parameters.AddWithValue("@Bill_amount_after_Tax", exp4.Text);
-                                                            insertCommand.Parameters.AddWithValue("@Bill_gross", exp5.Text);
-                                                            insertCommand.Parameters.AddWithValue("@Date_of_Billing", exp6.Text);
-
-
-                                                            insertCommand.ExecuteNonQuery();
-
-
-                                                            //
-                                                            //end of inserting into database
-                                                            //
-
-                                                            //
-                                                            //START of Showing what has been added to the database
-                                                            //
-                                                            richTextBox3.AppendText("Details of the New Expense Record Added :    " + Environment.NewLine);
-                                                            richTextBox3.AppendText(Environment.NewLine);
-                                                            richTextBox3.AppendText(comboBoxExpensesCategory.Text + Environment.NewLine);
-                                                            richTextBox3.AppendText(comboBoxbuttonExpensesBill_Type.Text + Environment.NewLine);
-                                                            richTextBox3.AppendText(comboBoxExpensesCompanies.Text + Environment.NewLine);
-                                                            richTextBox3.AppendText(exp1.Text + Environment.NewLine);
-                                                            richTextBox3.AppendText(exp2.Text + Environment.NewLine);
-                                                            richTextBox3.AppendText(exp3.Text + Environment.NewLine);
-                                                            richTextBox3.AppendText(exp4.Text + Environment.NewLine);
-                                                            richTextBox3.AppendText(exp5.Text + Environment.NewLine);
-                                                            richTextBox3.AppendText(exp6.Text + Environment.NewLine);
-                                                            //
-                                                            //END of Showing what has been added to the database
-                                                            //
-
-                                                            //
-                                                            //end of  inserting into the database.
-                                                            //
-                                                        }
+                                                        //
+                                                        //end of  inserting into the database.
+                                                        //
                                                     }
                                                 }
                                             }
+
                                         }
                                     }
                                 }
@@ -1534,6 +1670,241 @@ namespace G
         //
         //***************************************************************************************************************************************************************************************************************************
 
+        //########
+
+        //***************************************************************************************************************************************************************************************************************************
+        //
+        //
+        //
+        //Start of Incomes
+        //
+        //
+        //
+        //***************************************************************************************************************************************************************************************************************************
+
+        //
+        //Category ComboBox
+        //
+        private void comboBoxIncomeCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void incomebutton1_Click(object sender, EventArgs e)
+        {
+
+            //
+            //START of Delete Income category
+            //
+
+            incomerichTextBox.Clear();
+            //
+            //START of DELETING Income_Category  record from the database.
+            //            
+
+            if (comboBoxIncomeCategory.Text != "")
+            {
+                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+                {
+                    using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM Income_Category WHERE [Category] = ?", connection))
+                    {
+                        connection.Open();
+
+                        deleteCommand.Parameters.AddWithValue("@Category", comboBoxIncomeCategory.Text);
+
+                        deleteCommand.ExecuteNonQuery();
+                    }
+                }
+
+                //
+                //START of Showing what has been updated into the database
+                //
+                incomerichTextBox.AppendText("Records Deleted Successfully:    " + Environment.NewLine);
+                incomerichTextBox.AppendText(comboBoxIncomeCategory.Text + Environment.NewLine);
+                comboBoxIncomeCategory.Items.Remove(comboBoxIncomeCategory.Text);
+
+
+                //
+                //END of Showing what has been updated into the database
+                //
+
+                //
+                //END of DELETING Income_Category record from the database.
+                //
+
+                //
+                //START of clearing fields and comboBox to update comboBox with new records
+                //
+                /*
+                comboBoxEmployees.Items.Clear();
+                comboBoxEmployees.ResetText();
+                */
+                //
+                //END of clearing fields and comboBox to update comboBox with new records
+                //
+            }
+            else
+            {
+                MessageBox.Show("Please select an entry");
+            }
+        }
+
+        private void incomebutton2_Click(object sender, EventArgs e)
+        {
+            //
+            //Adding a new category Income to the database using a input message box
+            //
+            List<string> List_Category = new List<string>();// to add all the categories to a list for latter to be checked if new entry already exists in the table
+            string NewCategoryIncomeValue = Interaction.InputBox("Please insert a new category", "New Category", "");
+
+            incomerichTextBox.AppendText(NewCategoryIncomeValue);
+
+            //
+            //End of collecting a new category Income to add in the database using a inputBox message box
+            //
+            if (NewCategoryIncomeValue != "" && comboBoxIncomeCategory.Text == "")
+            {
+
+                incomerichTextBox.Clear();
+
+                //
+                //START of new records to the Income_Category Table.
+                //
+                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
+                {
+
+                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Income_Category ([Category]) VALUES (?)", connection))//insert command
+                    using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Income_Category", connection))
+                    {
+
+                        connection.Open();
+
+                        //
+                        //start of checking if entry exists in database
+                        //
+                        DataTable table = new DataTable();
+                        OleDbDataAdapter adapter = new OleDbDataAdapter();
+                        adapter.SelectCommand = selectCommand;
+                        adapter.Fill(table);
+
+                        foreach (DataRow row in table.Rows)
+                        {
+
+                            object nameValue = row["Category"];
+
+                            string strName = nameValue.ToString();
+
+                            if (!List_Category.Contains(strName))
+                            {
+                                List_Category.Add(strName);
+                            }
+
+                            //
+                            //End of checking if entry exists in database
+                            //
+                        }
+
+                        if (List_Category.Contains(NewCategoryIncomeValue))
+                        {
+                            MessageBox.Show("Category already exist");
+                        }
+                        //
+                        //inserting into the database
+                        //
+                        else
+                        {
+                            insertCommand.Parameters.AddWithValue("Category", NewCategoryIncomeValue);
+
+                            insertCommand.ExecuteNonQuery();
+
+                            connection.Close();
+
+                            //
+                            //end of inserting into database
+                            //
+
+                            //
+                            //START of Showing what has been added to the database
+                            //
+                            incomerichTextBox.AppendText("Records Inserted:    " + Environment.NewLine);
+                            incomerichTextBox.AppendText(Environment.NewLine);
+                            incomerichTextBox.AppendText(NewCategoryIncomeValue + "    " + Environment.NewLine);
+                            //
+                            //END of Showing what has been added to the database
+                            //
+
+                            //
+                            //adding to the comboBox
+                            //
+
+                            comboBoxIncomeCategory.Items.Add(NewCategoryIncomeValue);
+
+                            //
+                            //end of adding to the comboBox
+                            //
+                        }
+
+
+
+                    }
+                }
+                //
+                //END of Adding a new Income category
+                //
+
+                //
+                //START of clearing fields and comboBox to update comboBox with new records
+                //
+                /*
+                comboBoxIncomeCategory.Items.Clear();
+                comboBoxIncomeCategory.ResetText();
+                */
+                //
+                //END of clearing fields and comboBox to update comboBox with new records
+                //
+
+                // END of on click to check for an existing entri and add a new entry to categories Income
+            }
+        }
+
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void incomebutton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void incomebutton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void incomebutton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void incomebutton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //***************************************************************************************************************************************************************************************************************************
+        //
+        //
+        //
+        //End of Incomes
+        //
+        //
+        //
+        //***************************************************************************************************************************************************************************************************************************
+
+        //########
 
         //***************************************************************************************************************************************************************************************************************************
         //
@@ -1611,8 +1982,8 @@ namespace G
             string strListOfEntryDateFrom = String.Empty;
             string strListOfEntryDateTo = String.Empty;
             //Creating a string out of the entries in the all fields to check against the database for duplicates
-            string strDateFromComboBox = WageComboBox1.Text + " 00:00:00";
-            string strDateToComboBox = WageComboBox2.Text + " 00:00:00";
+            string strDateFromComboBox = WageComboBox1.Value + " 00:00:00";
+            string strDateToComboBox = WageComboBox1.Value + " 00:00:00";
 
 
             using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
@@ -1688,8 +2059,8 @@ namespace G
                         {
                             insertCommand.Parameters.AddWithValue("@EmployeeID", WageEmployeeID.Text);
                             insertCommand.Parameters.AddWithValue("@Employee_Full_Name", ComboBoxWage.Text);
-                            insertCommand.Parameters.AddWithValue("@Date_From", WageComboBox1.Text);
-                            insertCommand.Parameters.AddWithValue("@Date_To", WageComboBox2.Text);
+                            insertCommand.Parameters.AddWithValue("@Date_From", WageComboBox1.Value);
+                            insertCommand.Parameters.AddWithValue("@Date_To", WageComboBox1.Value);
                             insertCommand.Parameters.AddWithValue("@Total_Hours", Wage1.Text);
                             insertCommand.Parameters.AddWithValue("@Total_Before_Tax", Wage2.Text);
 
@@ -1708,8 +2079,8 @@ namespace G
                             richTextBoxWage.AppendText(Environment.NewLine);
                             richTextBoxWage.AppendText(WageEmployeeID.Text + "    " + Environment.NewLine);
                             richTextBoxWage.AppendText(ComboBoxWage.Text + "    " + Environment.NewLine);
-                            richTextBoxWage.AppendText(WageComboBox1.Text + "    " + Environment.NewLine);
-                            richTextBoxWage.AppendText(WageComboBox2.Text + "    " + Environment.NewLine);
+                            richTextBoxWage.AppendText(WageComboBox1.Value + "    " + Environment.NewLine);
+                            richTextBoxWage.AppendText(WageComboBox1.Value + "    " + Environment.NewLine);
                             richTextBoxWage.AppendText(Wage1.Text + "    " + Environment.NewLine);
                             richTextBoxWage.AppendText(Wage2.Text + "    " + Environment.NewLine);
                             //
@@ -1739,6 +2110,9 @@ namespace G
         //
         //
         //***************************************************************************************************************************************************************************************************************************
+
+        //########
+
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -1817,8 +2191,16 @@ namespace G
         { }
 
         private void tabPage5_Click(object sender, EventArgs e)
-        {
+        { }
 
-        }
+        private void Wage5_ValueChanged(object sender, EventArgs e)
+        { }
+
+        private void exp6_ValueChanged(object sender, EventArgs e)
+        { }
+
+        private void richTextBox3_TextChanged(object sender, EventArgs e)
+        { }
+
     }
 }

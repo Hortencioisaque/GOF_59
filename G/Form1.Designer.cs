@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GOF_59));
             this.Settings = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.exp6 = new System.Windows.Forms.DateTimePicker();
             this.button32 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.buttonDeleteExpensesCategory = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
-            this.exp6 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
             this.button23 = new System.Windows.Forms.Button();
@@ -43,7 +43,8 @@
             this.button25 = new System.Windows.Forms.Button();
             this.submitExpBTN = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
+            this.comboBox14 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox16 = new System.Windows.Forms.DateTimePicker();
             this.comboBox17 = new System.Windows.Forms.ComboBox();
             this.label42 = new System.Windows.Forms.Label();
             this.button27 = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.button28 = new System.Windows.Forms.Button();
             this.comboBox13 = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
             this.comboBox15 = new System.Windows.Forms.ComboBox();
             this.label46 = new System.Windows.Forms.Label();
@@ -78,24 +78,28 @@
             this.comboBoxExpensesCategory = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
+            this.incomebutton6 = new System.Windows.Forms.Button();
+            this.incomebutton5 = new System.Windows.Forms.Button();
+            this.incomebutton4 = new System.Windows.Forms.Button();
+            this.incomebutton3 = new System.Windows.Forms.Button();
+            this.incomebutton2 = new System.Windows.Forms.Button();
+            this.incomebutton1 = new System.Windows.Forms.Button();
+            this.comboBoxIncomeCategory = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox18 = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label29 = new System.Windows.Forms.Label();
-            this.comboBox19 = new System.Windows.Forms.ComboBox();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.incomebutton7 = new System.Windows.Forms.Button();
+            this.incomebutton8 = new System.Windows.Forms.Button();
+            this.incomebutton9 = new System.Windows.Forms.Button();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
+            this.incomebutton10 = new System.Windows.Forms.Button();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
@@ -104,9 +108,8 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.incomerichTextBox = new System.Windows.Forms.RichTextBox();
+            this.comboBoxIncomeType_Of_Sale = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -114,19 +117,16 @@
             this.label20 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.WageComboBox2 = new System.Windows.Forms.DateTimePicker();
             this.label52 = new System.Windows.Forms.Label();
+            this.WageComboBox1 = new System.Windows.Forms.DateTimePicker();
             this.Wage2 = new System.Windows.Forms.TextBox();
             this.Wage1 = new System.Windows.Forms.TextBox();
-            this.WageComboBox2 = new System.Windows.Forms.ComboBox();
             this.richTextBoxWage = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.WageComboBox1 = new System.Windows.Forms.ComboBox();
             this.ComboBoxWage = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnWageDeletePayment = new System.Windows.Forms.Button();
@@ -141,11 +141,11 @@
             this.BtnWageSubmit = new System.Windows.Forms.Button();
             this.WageEmployeeID = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Wage4 = new System.Windows.Forms.DateTimePicker();
+            this.Wage5 = new System.Windows.Forms.DateTimePicker();
             this.Wage6 = new System.Windows.Forms.ComboBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.Wage5 = new System.Windows.Forms.ComboBox();
             this.label51 = new System.Windows.Forms.Label();
-            this.Wage4 = new System.Windows.Forms.ComboBox();
             this.label53 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
@@ -153,6 +153,7 @@
             this.BtnWageGetPayments = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Emp11 = new System.Windows.Forms.DateTimePicker();
             this.label49 = new System.Windows.Forms.Label();
             this.Emp5 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -179,7 +180,6 @@
             this.Emp2 = new System.Windows.Forms.TextBox();
             this.Emp3 = new System.Windows.Forms.TextBox();
             this.Emp4 = new System.Windows.Forms.TextBox();
-            this.Emp11 = new System.Windows.Forms.TextBox();
             this.Emp10 = new System.Windows.Forms.TextBox();
             this.Emp9 = new System.Windows.Forms.TextBox();
             this.Emp8 = new System.Windows.Forms.TextBox();
@@ -217,18 +217,18 @@
             this.Settings.Location = new System.Drawing.Point(1, 2);
             this.Settings.Name = "Settings";
             this.Settings.SelectedIndex = 0;
-            this.Settings.Size = new System.Drawing.Size(1294, 702);
+            this.Settings.Size = new System.Drawing.Size(1305, 702);
             this.Settings.TabIndex = 0;
             this.Settings.Tag = "";
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage1.Controls.Add(this.exp6);
             this.tabPage1.Controls.Add(this.button32);
             this.tabPage1.Controls.Add(this.button31);
             this.tabPage1.Controls.Add(this.buttonDeleteExpensesCategory);
             this.tabPage1.Controls.Add(this.label48);
-            this.tabPage1.Controls.Add(this.exp6);
             this.tabPage1.Controls.Add(this.panel7);
             this.tabPage1.Controls.Add(this.submitExpBTN);
             this.tabPage1.Controls.Add(this.panel6);
@@ -255,16 +255,25 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1286, 659);
+            this.tabPage1.Size = new System.Drawing.Size(1297, 659);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Expenses";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // exp6
+            // 
+            this.exp6.Location = new System.Drawing.Point(308, 312);
+            this.exp6.Name = "exp6";
+            this.exp6.Size = new System.Drawing.Size(382, 26);
+            this.exp6.TabIndex = 82;
+            this.exp6.Value = new System.DateTime(2021, 8, 25, 10, 58, 50, 0);
+            this.exp6.ValueChanged += new System.EventHandler(this.exp6_ValueChanged);
             // 
             // button32
             // 
             this.button32.BackColor = System.Drawing.Color.OrangeRed;
             this.button32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button32.Location = new System.Drawing.Point(23, 351);
+            this.button32.Location = new System.Drawing.Point(19, 348);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(91, 61);
             this.button32.TabIndex = 81;
@@ -276,7 +285,7 @@
             // 
             this.button31.BackColor = System.Drawing.Color.OrangeRed;
             this.button31.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button31.Location = new System.Drawing.Point(24, 220);
+            this.button31.Location = new System.Drawing.Point(20, 217);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(90, 61);
             this.button31.TabIndex = 80;
@@ -288,7 +297,7 @@
             // 
             this.buttonDeleteExpensesCategory.BackColor = System.Drawing.Color.OrangeRed;
             this.buttonDeleteExpensesCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonDeleteExpensesCategory.Location = new System.Drawing.Point(24, 70);
+            this.buttonDeleteExpensesCategory.Location = new System.Drawing.Point(20, 67);
             this.buttonDeleteExpensesCategory.Name = "buttonDeleteExpensesCategory";
             this.buttonDeleteExpensesCategory.Size = new System.Drawing.Size(90, 61);
             this.buttonDeleteExpensesCategory.TabIndex = 79;
@@ -300,18 +309,11 @@
             // 
             this.label48.AutoSize = true;
             this.label48.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label48.Location = new System.Drawing.Point(320, 292);
+            this.label48.Location = new System.Drawing.Point(316, 289);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(125, 20);
             this.label48.TabIndex = 78;
             this.label48.Text = "Date Of Billing";
-            // 
-            // exp6
-            // 
-            this.exp6.Location = new System.Drawing.Point(313, 315);
-            this.exp6.Name = "exp6";
-            this.exp6.Size = new System.Drawing.Size(382, 26);
-            this.exp6.TabIndex = 8;
             // 
             // panel7
             // 
@@ -320,7 +322,7 @@
             this.panel7.Controls.Add(this.button23);
             this.panel7.Controls.Add(this.button26);
             this.panel7.Controls.Add(this.button25);
-            this.panel7.Location = new System.Drawing.Point(726, 324);
+            this.panel7.Location = new System.Drawing.Point(722, 298);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(542, 111);
             this.panel7.TabIndex = 76;
@@ -340,7 +342,7 @@
             // 
             this.button23.BackColor = System.Drawing.Color.Red;
             this.button23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button23.Location = new System.Drawing.Point(377, 48);
+            this.button23.Location = new System.Drawing.Point(372, 43);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(159, 61);
             this.button23.TabIndex = 2;
@@ -351,7 +353,7 @@
             // 
             this.button26.BackColor = System.Drawing.Color.Gray;
             this.button26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button26.Location = new System.Drawing.Point(21, 48);
+            this.button26.Location = new System.Drawing.Point(16, 43);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(159, 61);
             this.button26.TabIndex = 0;
@@ -362,7 +364,7 @@
             // 
             this.button25.BackColor = System.Drawing.Color.Teal;
             this.button25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button25.Location = new System.Drawing.Point(199, 48);
+            this.button25.Location = new System.Drawing.Point(194, 43);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(159, 61);
             this.button25.TabIndex = 1;
@@ -373,9 +375,9 @@
             // 
             this.submitExpBTN.BackColor = System.Drawing.Color.OliveDrab;
             this.submitExpBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.submitExpBTN.Location = new System.Drawing.Point(312, 349);
+            this.submitExpBTN.Location = new System.Drawing.Point(308, 348);
             this.submitExpBTN.Name = "submitExpBTN";
-            this.submitExpBTN.Size = new System.Drawing.Size(231, 75);
+            this.submitExpBTN.Size = new System.Drawing.Size(382, 61);
             this.submitExpBTN.TabIndex = 9;
             this.submitExpBTN.Text = "SUBMIT";
             this.submitExpBTN.UseVisualStyleBackColor = false;
@@ -384,6 +386,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Azure;
+            this.panel6.Controls.Add(this.comboBox14);
             this.panel6.Controls.Add(this.comboBox16);
             this.panel6.Controls.Add(this.comboBox17);
             this.panel6.Controls.Add(this.label42);
@@ -393,28 +396,33 @@
             this.panel6.Controls.Add(this.button28);
             this.panel6.Controls.Add(this.comboBox13);
             this.panel6.Controls.Add(this.label44);
-            this.panel6.Controls.Add(this.comboBox14);
             this.panel6.Controls.Add(this.label45);
             this.panel6.Controls.Add(this.comboBox15);
             this.panel6.Controls.Add(this.label46);
             this.panel6.Controls.Add(this.label47);
-            this.panel6.Location = new System.Drawing.Point(726, 13);
+            this.panel6.Location = new System.Drawing.Point(722, 10);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(542, 305);
+            this.panel6.Size = new System.Drawing.Size(542, 276);
             this.panel6.TabIndex = 70;
+            // 
+            // comboBox14
+            // 
+            this.comboBox14.Location = new System.Drawing.Point(304, 37);
+            this.comboBox14.Name = "comboBox14";
+            this.comboBox14.Size = new System.Drawing.Size(222, 26);
+            this.comboBox14.TabIndex = 86;
             // 
             // comboBox16
             // 
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(28, 43);
+            this.comboBox16.Location = new System.Drawing.Point(31, 37);
             this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(232, 28);
-            this.comboBox16.TabIndex = 0;
+            this.comboBox16.Size = new System.Drawing.Size(233, 26);
+            this.comboBox16.TabIndex = 87;
             // 
             // comboBox17
             // 
             this.comboBox17.FormattingEnabled = true;
-            this.comboBox17.Location = new System.Drawing.Point(27, 113);
+            this.comboBox17.Location = new System.Drawing.Point(25, 105);
             this.comboBox17.Name = "comboBox17";
             this.comboBox17.Size = new System.Drawing.Size(233, 28);
             this.comboBox17.TabIndex = 2;
@@ -423,7 +431,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label42.Location = new System.Drawing.Point(29, 88);
+            this.label42.Location = new System.Drawing.Point(27, 80);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(154, 20);
             this.label42.TabIndex = 75;
@@ -432,7 +440,7 @@
             // button27
             // 
             this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.Location = new System.Drawing.Point(340, 250);
+            this.button27.Location = new System.Drawing.Point(338, 232);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(50, 36);
             this.button27.TabIndex = 6;
@@ -443,7 +451,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label43.Location = new System.Drawing.Point(29, 236);
+            this.label43.Location = new System.Drawing.Point(27, 218);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(272, 20);
             this.label43.TabIndex = 73;
@@ -451,7 +459,7 @@
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(28, 259);
+            this.textBox27.Location = new System.Drawing.Point(26, 241);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(306, 26);
             this.textBox27.TabIndex = 5;
@@ -459,7 +467,7 @@
             // button28
             // 
             this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.button28.Location = new System.Drawing.Point(418, 225);
+            this.button28.Location = new System.Drawing.Point(416, 207);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(110, 61);
             this.button28.TabIndex = 7;
@@ -469,7 +477,7 @@
             // comboBox13
             // 
             this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(295, 113);
+            this.comboBox13.Location = new System.Drawing.Point(293, 105);
             this.comboBox13.Name = "comboBox13";
             this.comboBox13.Size = new System.Drawing.Size(233, 28);
             this.comboBox13.TabIndex = 3;
@@ -478,25 +486,17 @@
             // 
             this.label44.AutoSize = true;
             this.label44.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label44.Location = new System.Drawing.Point(302, 90);
+            this.label44.Location = new System.Drawing.Point(300, 82);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(152, 20);
             this.label44.TabIndex = 71;
             this.label44.Text = "Select a Category";
             // 
-            // comboBox14
-            // 
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(293, 43);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(233, 28);
-            this.comboBox14.TabIndex = 1;
-            // 
             // label45
             // 
             this.label45.AutoSize = true;
             this.label45.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label45.Location = new System.Drawing.Point(302, 20);
+            this.label45.Location = new System.Drawing.Point(300, 12);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(73, 20);
             this.label45.TabIndex = 69;
@@ -505,7 +505,7 @@
             // comboBox15
             // 
             this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(28, 181);
+            this.comboBox15.Location = new System.Drawing.Point(26, 173);
             this.comboBox15.Name = "comboBox15";
             this.comboBox15.Size = new System.Drawing.Size(232, 28);
             this.comboBox15.TabIndex = 4;
@@ -514,7 +514,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label46.Location = new System.Drawing.Point(29, 158);
+            this.label46.Location = new System.Drawing.Point(27, 150);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(137, 20);
             this.label46.TabIndex = 65;
@@ -524,7 +524,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label47.Location = new System.Drawing.Point(29, 20);
+            this.label47.Location = new System.Drawing.Point(27, 12);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(94, 20);
             this.label47.TabIndex = 66;
@@ -532,17 +532,18 @@
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(23, 441);
+            this.richTextBox3.Location = new System.Drawing.Point(19, 415);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(1245, 212);
+            this.richTextBox3.Size = new System.Drawing.Size(1245, 235);
             this.richTextBox3.TabIndex = 10;
             this.richTextBox3.Text = "";
+            this.richTextBox3.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
             // 
             // label37
             // 
             this.label37.AutoSize = true;
             this.label37.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label37.Location = new System.Drawing.Point(320, 240);
+            this.label37.Location = new System.Drawing.Point(316, 237);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(124, 20);
             this.label37.TabIndex = 68;
@@ -550,7 +551,7 @@
             // 
             // exp5
             // 
-            this.exp5.Location = new System.Drawing.Point(313, 263);
+            this.exp5.Location = new System.Drawing.Point(309, 260);
             this.exp5.Name = "exp5";
             this.exp5.Size = new System.Drawing.Size(382, 26);
             this.exp5.TabIndex = 7;
@@ -559,7 +560,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label36.Location = new System.Drawing.Point(320, 182);
+            this.label36.Location = new System.Drawing.Point(316, 179);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(104, 20);
             this.label36.TabIndex = 66;
@@ -567,7 +568,7 @@
             // 
             // exp4
             // 
-            this.exp4.Location = new System.Drawing.Point(312, 207);
+            this.exp4.Location = new System.Drawing.Point(308, 204);
             this.exp4.Name = "exp4";
             this.exp4.Size = new System.Drawing.Size(382, 26);
             this.exp4.TabIndex = 6;
@@ -576,7 +577,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label35.Location = new System.Drawing.Point(320, 126);
+            this.label35.Location = new System.Drawing.Point(316, 123);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(150, 20);
             this.label35.TabIndex = 64;
@@ -584,7 +585,7 @@
             // 
             // exp3
             // 
-            this.exp3.Location = new System.Drawing.Point(312, 151);
+            this.exp3.Location = new System.Drawing.Point(308, 148);
             this.exp3.Name = "exp3";
             this.exp3.Size = new System.Drawing.Size(382, 26);
             this.exp3.TabIndex = 5;
@@ -593,7 +594,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label34.Location = new System.Drawing.Point(320, 70);
+            this.label34.Location = new System.Drawing.Point(316, 67);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(122, 20);
             this.label34.TabIndex = 62;
@@ -601,7 +602,7 @@
             // 
             // exp2
             // 
-            this.exp2.Location = new System.Drawing.Point(312, 95);
+            this.exp2.Location = new System.Drawing.Point(308, 92);
             this.exp2.Name = "exp2";
             this.exp2.Size = new System.Drawing.Size(382, 26);
             this.exp2.TabIndex = 4;
@@ -610,7 +611,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label33.Location = new System.Drawing.Point(320, 14);
+            this.label33.Location = new System.Drawing.Point(316, 11);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(41, 20);
             this.label33.TabIndex = 60;
@@ -618,7 +619,7 @@
             // 
             // exp1
             // 
-            this.exp1.Location = new System.Drawing.Point(312, 39);
+            this.exp1.Location = new System.Drawing.Point(308, 36);
             this.exp1.Name = "exp1";
             this.exp1.Size = new System.Drawing.Size(382, 26);
             this.exp1.TabIndex = 3;
@@ -627,7 +628,7 @@
             // 
             this.button15.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button15.Location = new System.Drawing.Point(120, 351);
+            this.button15.Location = new System.Drawing.Point(116, 348);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(128, 61);
             this.button15.TabIndex = 58;
@@ -638,7 +639,7 @@
             // comboBoxExpensesCompanies
             // 
             this.comboBoxExpensesCompanies.FormattingEnabled = true;
-            this.comboBoxExpensesCompanies.Location = new System.Drawing.Point(24, 317);
+            this.comboBoxExpensesCompanies.Location = new System.Drawing.Point(20, 314);
             this.comboBoxExpensesCompanies.Name = "comboBoxExpensesCompanies";
             this.comboBoxExpensesCompanies.Size = new System.Drawing.Size(224, 28);
             this.comboBoxExpensesCompanies.TabIndex = 2;
@@ -648,7 +649,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label30.Location = new System.Drawing.Point(29, 294);
+            this.label30.Location = new System.Drawing.Point(25, 291);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(134, 20);
             this.label30.TabIndex = 56;
@@ -658,7 +659,7 @@
             // 
             this.buttonAddExpensesBill_Type.BackColor = System.Drawing.Color.CornflowerBlue;
             this.buttonAddExpensesBill_Type.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAddExpensesBill_Type.Location = new System.Drawing.Point(120, 220);
+            this.buttonAddExpensesBill_Type.Location = new System.Drawing.Point(116, 217);
             this.buttonAddExpensesBill_Type.Name = "buttonAddExpensesBill_Type";
             this.buttonAddExpensesBill_Type.Size = new System.Drawing.Size(133, 61);
             this.buttonAddExpensesBill_Type.TabIndex = 55;
@@ -669,7 +670,7 @@
             // comboBoxbuttonExpensesBill_Type
             // 
             this.comboBoxbuttonExpensesBill_Type.FormattingEnabled = true;
-            this.comboBoxbuttonExpensesBill_Type.Location = new System.Drawing.Point(24, 180);
+            this.comboBoxbuttonExpensesBill_Type.Location = new System.Drawing.Point(20, 177);
             this.comboBoxbuttonExpensesBill_Type.Name = "comboBoxbuttonExpensesBill_Type";
             this.comboBoxbuttonExpensesBill_Type.Size = new System.Drawing.Size(224, 28);
             this.comboBoxbuttonExpensesBill_Type.TabIndex = 1;
@@ -679,7 +680,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label31.Location = new System.Drawing.Point(29, 157);
+            this.label31.Location = new System.Drawing.Point(25, 154);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(185, 20);
             this.label31.TabIndex = 53;
@@ -689,7 +690,7 @@
             // 
             this.buttonAddExpensesCategory.BackColor = System.Drawing.Color.CadetBlue;
             this.buttonAddExpensesCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAddExpensesCategory.Location = new System.Drawing.Point(120, 70);
+            this.buttonAddExpensesCategory.Location = new System.Drawing.Point(116, 67);
             this.buttonAddExpensesCategory.Name = "buttonAddExpensesCategory";
             this.buttonAddExpensesCategory.Size = new System.Drawing.Size(133, 61);
             this.buttonAddExpensesCategory.TabIndex = 10;
@@ -700,7 +701,7 @@
             // comboBoxExpensesCategory
             // 
             this.comboBoxExpensesCategory.FormattingEnabled = true;
-            this.comboBoxExpensesCategory.Location = new System.Drawing.Point(26, 38);
+            this.comboBoxExpensesCategory.Location = new System.Drawing.Point(22, 35);
             this.comboBoxExpensesCategory.Name = "comboBoxExpensesCategory";
             this.comboBoxExpensesCategory.Size = new System.Drawing.Size(224, 28);
             this.comboBoxExpensesCategory.TabIndex = 0;
@@ -710,7 +711,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label32.Location = new System.Drawing.Point(29, 15);
+            this.label32.Location = new System.Drawing.Point(25, 12);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(152, 20);
             this.label32.TabIndex = 50;
@@ -719,16 +720,19 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.DarkGray;
-            this.tabPage3.Controls.Add(this.button34);
-            this.tabPage3.Controls.Add(this.button33);
-            this.tabPage3.Controls.Add(this.button29);
+            this.tabPage3.Controls.Add(this.incomebutton6);
+            this.tabPage3.Controls.Add(this.incomebutton5);
+            this.tabPage3.Controls.Add(this.incomebutton4);
+            this.tabPage3.Controls.Add(this.incomebutton3);
+            this.tabPage3.Controls.Add(this.incomebutton2);
+            this.tabPage3.Controls.Add(this.incomebutton1);
+            this.tabPage3.Controls.Add(this.comboBoxIncomeCategory);
+            this.tabPage3.Controls.Add(this.dateTimePicker1);
             this.tabPage3.Controls.Add(this.comboBox18);
             this.tabPage3.Controls.Add(this.panel5);
-            this.tabPage3.Controls.Add(this.button12);
             this.tabPage3.Controls.Add(this.panel2);
-            this.tabPage3.Controls.Add(this.richTextBox1);
-            this.tabPage3.Controls.Add(this.button9);
-            this.tabPage3.Controls.Add(this.comboBox5);
+            this.tabPage3.Controls.Add(this.incomerichTextBox);
+            this.tabPage3.Controls.Add(this.comboBoxIncomeType_Of_Sale);
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.label25);
             this.tabPage3.Controls.Add(this.label22);
@@ -736,73 +740,134 @@
             this.tabPage3.Controls.Add(this.label20);
             this.tabPage3.Controls.Add(this.textBox14);
             this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.textBox11);
-            this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.comboBox4);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1286, 659);
+            this.tabPage3.Size = new System.Drawing.Size(1297, 659);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Incomes";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // button34
+            // incomebutton6
             // 
-            this.button34.BackColor = System.Drawing.Color.OrangeRed;
-            this.button34.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button34.Location = new System.Drawing.Point(24, 222);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(90, 61);
-            this.button34.TabIndex = 81;
-            this.button34.Text = "Delete Type";
-            this.button34.UseVisualStyleBackColor = false;
+            this.incomebutton6.BackColor = System.Drawing.Color.Gold;
+            this.incomebutton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomebutton6.Location = new System.Drawing.Point(288, 298);
+            this.incomebutton6.Name = "incomebutton6";
+            this.incomebutton6.Size = new System.Drawing.Size(308, 104);
+            this.incomebutton6.TabIndex = 90;
+            this.incomebutton6.Text = "Submit Income";
+            this.incomebutton6.UseVisualStyleBackColor = false;
+            this.incomebutton6.Click += new System.EventHandler(this.incomebutton6_Click);
             // 
-            // button33
+            // incomebutton5
             // 
-            this.button33.BackColor = System.Drawing.Color.OrangeRed;
-            this.button33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button33.Location = new System.Drawing.Point(24, 79);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(90, 61);
-            this.button33.TabIndex = 80;
-            this.button33.Text = "Delete Category";
-            this.button33.UseVisualStyleBackColor = false;
+            this.incomebutton5.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.incomebutton5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.incomebutton5.Location = new System.Drawing.Point(445, 162);
+            this.incomebutton5.Name = "incomebutton5";
+            this.incomebutton5.Size = new System.Drawing.Size(95, 54);
+            this.incomebutton5.TabIndex = 89;
+            this.incomebutton5.Text = "ADD New";
+            this.incomebutton5.UseVisualStyleBackColor = false;
+            this.incomebutton5.Click += new System.EventHandler(this.incomebutton5_Click);
             // 
-            // button29
+            // incomebutton4
             // 
-            this.button29.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.button29.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button29.Location = new System.Drawing.Point(561, 173);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(117, 31);
-            this.button29.TabIndex = 69;
-            this.button29.Text = "ADD New";
-            this.button29.UseVisualStyleBackColor = false;
+            this.incomebutton4.BackColor = System.Drawing.Color.SteelBlue;
+            this.incomebutton4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.incomebutton4.Location = new System.Drawing.Point(120, 222);
+            this.incomebutton4.Name = "incomebutton4";
+            this.incomebutton4.Size = new System.Drawing.Size(128, 61);
+            this.incomebutton4.TabIndex = 88;
+            this.incomebutton4.Text = "ADD a New Type";
+            this.incomebutton4.UseVisualStyleBackColor = false;
+            this.incomebutton4.Click += new System.EventHandler(this.incomebutton4_Click);
+            // 
+            // incomebutton3
+            // 
+            this.incomebutton3.BackColor = System.Drawing.Color.OrangeRed;
+            this.incomebutton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.incomebutton3.Location = new System.Drawing.Point(24, 222);
+            this.incomebutton3.Name = "incomebutton3";
+            this.incomebutton3.Size = new System.Drawing.Size(90, 61);
+            this.incomebutton3.TabIndex = 87;
+            this.incomebutton3.Text = "Delete Type";
+            this.incomebutton3.UseVisualStyleBackColor = false;
+            this.incomebutton3.Click += new System.EventHandler(this.incomebutton3_Click);
+            // 
+            // incomebutton2
+            // 
+            this.incomebutton2.BackColor = System.Drawing.Color.SteelBlue;
+            this.incomebutton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.incomebutton2.Location = new System.Drawing.Point(120, 79);
+            this.incomebutton2.Name = "incomebutton2";
+            this.incomebutton2.Size = new System.Drawing.Size(128, 61);
+            this.incomebutton2.TabIndex = 86;
+            this.incomebutton2.Text = "ADD a new Category";
+            this.incomebutton2.UseVisualStyleBackColor = false;
+            this.incomebutton2.Click += new System.EventHandler(this.incomebutton2_Click);
+            // 
+            // incomebutton1
+            // 
+            this.incomebutton1.BackColor = System.Drawing.Color.OrangeRed;
+            this.incomebutton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.incomebutton1.Location = new System.Drawing.Point(24, 77);
+            this.incomebutton1.Name = "incomebutton1";
+            this.incomebutton1.Size = new System.Drawing.Size(90, 61);
+            this.incomebutton1.TabIndex = 85;
+            this.incomebutton1.Text = "Delete Category";
+            this.incomebutton1.UseVisualStyleBackColor = false;
+            this.incomebutton1.Click += new System.EventHandler(this.incomebutton1_Click);
+            // 
+            // comboBoxIncomeCategory
+            // 
+            this.comboBoxIncomeCategory.FormattingEnabled = true;
+            this.comboBoxIncomeCategory.Location = new System.Drawing.Point(24, 43);
+            this.comboBoxIncomeCategory.Name = "comboBoxIncomeCategory";
+            this.comboBoxIncomeCategory.Size = new System.Drawing.Size(224, 28);
+            this.comboBoxIncomeCategory.TabIndex = 84;
+            this.comboBoxIncomeCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxIncomeCategory_SelectedIndexChanged);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(288, 114);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(252, 26);
+            this.dateTimePicker1.TabIndex = 83;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 8, 25, 10, 58, 50, 0);
             // 
             // comboBox18
             // 
             this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Location = new System.Drawing.Point(288, 173);
+            this.comboBox18.Location = new System.Drawing.Point(288, 184);
             this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(224, 28);
+            this.comboBox18.Size = new System.Drawing.Size(151, 28);
             this.comboBox18.TabIndex = 68;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel5.Controls.Add(this.dateTimePicker2);
             this.panel5.Controls.Add(this.label29);
-            this.panel5.Controls.Add(this.comboBox19);
-            this.panel5.Controls.Add(this.button21);
-            this.panel5.Controls.Add(this.button17);
-            this.panel5.Controls.Add(this.button16);
+            this.panel5.Controls.Add(this.incomebutton7);
+            this.panel5.Controls.Add(this.incomebutton8);
+            this.panel5.Controls.Add(this.incomebutton9);
             this.panel5.Controls.Add(this.textBox26);
             this.panel5.Controls.Add(this.label40);
             this.panel5.Location = new System.Drawing.Point(637, 282);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(644, 125);
+            this.panel5.Size = new System.Drawing.Size(644, 138);
             this.panel5.TabIndex = 67;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(68, 8);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(252, 26);
+            this.dateTimePicker2.TabIndex = 84;
+            this.dateTimePicker2.Value = new System.DateTime(2021, 8, 25, 10, 58, 50, 0);
             // 
             // label29
             // 
@@ -814,50 +879,42 @@
             this.label29.TabIndex = 75;
             this.label29.Text = "Date";
             // 
-            // comboBox19
+            // incomebutton7
             // 
-            this.comboBox19.FormattingEnabled = true;
-            this.comboBox19.Location = new System.Drawing.Point(10, 31);
-            this.comboBox19.Name = "comboBox19";
-            this.comboBox19.Size = new System.Drawing.Size(149, 28);
-            this.comboBox19.TabIndex = 74;
+            this.incomebutton7.BackColor = System.Drawing.Color.Gray;
+            this.incomebutton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomebutton7.Location = new System.Drawing.Point(22, 48);
+            this.incomebutton7.Name = "incomebutton7";
+            this.incomebutton7.Size = new System.Drawing.Size(141, 72);
+            this.incomebutton7.TabIndex = 68;
+            this.incomebutton7.Text = "Show Income";
+            this.incomebutton7.UseVisualStyleBackColor = false;
             // 
-            // button21
+            // incomebutton8
             // 
-            this.button21.BackColor = System.Drawing.Color.Gray;
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.Location = new System.Drawing.Point(179, 40);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(141, 72);
-            this.button21.TabIndex = 68;
-            this.button21.Text = "Show Income";
-            this.button21.UseVisualStyleBackColor = false;
+            this.incomebutton8.BackColor = System.Drawing.Color.Teal;
+            this.incomebutton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomebutton8.Location = new System.Drawing.Point(257, 48);
+            this.incomebutton8.Name = "incomebutton8";
+            this.incomebutton8.Size = new System.Drawing.Size(141, 72);
+            this.incomebutton8.TabIndex = 67;
+            this.incomebutton8.Text = "EDIT Income";
+            this.incomebutton8.UseVisualStyleBackColor = false;
             // 
-            // button17
+            // incomebutton9
             // 
-            this.button17.BackColor = System.Drawing.Color.Teal;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(335, 40);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(141, 72);
-            this.button17.TabIndex = 67;
-            this.button17.Text = "EDIT Income";
-            this.button17.UseVisualStyleBackColor = false;
-            // 
-            // button16
-            // 
-            this.button16.BackColor = System.Drawing.Color.Red;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(491, 40);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(141, 72);
-            this.button16.TabIndex = 66;
-            this.button16.Text = "DELETE Income";
-            this.button16.UseVisualStyleBackColor = false;
+            this.incomebutton9.BackColor = System.Drawing.Color.Red;
+            this.incomebutton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomebutton9.Location = new System.Drawing.Point(491, 48);
+            this.incomebutton9.Name = "incomebutton9";
+            this.incomebutton9.Size = new System.Drawing.Size(141, 72);
+            this.incomebutton9.TabIndex = 66;
+            this.incomebutton9.Text = "DELETE Income";
+            this.incomebutton9.UseVisualStyleBackColor = false;
             // 
             // textBox26
             // 
-            this.textBox26.Location = new System.Drawing.Point(10, 86);
+            this.textBox26.Location = new System.Drawing.Point(459, 8);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(149, 26);
             this.textBox26.TabIndex = 64;
@@ -866,22 +923,11 @@
             // 
             this.label40.AutoSize = true;
             this.label40.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label40.Location = new System.Drawing.Point(9, 63);
+            this.label40.Location = new System.Drawing.Point(351, 11);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(88, 20);
+            this.label40.Size = new System.Drawing.Size(92, 20);
             this.label40.TabIndex = 65;
-            this.label40.Text = "Payent ID";
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.Gold;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(288, 298);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(308, 104);
-            this.button12.TabIndex = 62;
-            this.button12.Text = "Submit Income";
-            this.button12.UseVisualStyleBackColor = false;
+            this.label40.Text = "Income ID";
             // 
             // panel2
             // 
@@ -890,7 +936,7 @@
             this.panel2.Controls.Add(this.button11);
             this.panel2.Controls.Add(this.label26);
             this.panel2.Controls.Add(this.textBox16);
-            this.panel2.Controls.Add(this.button10);
+            this.panel2.Controls.Add(this.incomebutton10);
             this.panel2.Controls.Add(this.comboBox10);
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.comboBox9);
@@ -920,9 +966,9 @@
             this.label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label26.Location = new System.Drawing.Point(36, 113);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(248, 20);
+            this.label26.Size = new System.Drawing.Size(272, 20);
             this.label26.TabIndex = 60;
-            this.label26.Text = "Select a folder to send the to:";
+            this.label26.Text = "Select a Location to save the file";
             // 
             // textBox16
             // 
@@ -931,15 +977,15 @@
             this.textBox16.Size = new System.Drawing.Size(885, 26);
             this.textBox16.TabIndex = 52;
             // 
-            // button10
+            // incomebutton10
             // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(981, 104);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(263, 61);
-            this.button10.TabIndex = 52;
-            this.button10.Text = "Get Report";
-            this.button10.UseVisualStyleBackColor = true;
+            this.incomebutton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomebutton10.Location = new System.Drawing.Point(981, 104);
+            this.incomebutton10.Name = "incomebutton10";
+            this.incomebutton10.Size = new System.Drawing.Size(263, 61);
+            this.incomebutton10.TabIndex = 52;
+            this.incomebutton10.Text = "Get Report";
+            this.incomebutton10.UseVisualStyleBackColor = true;
             // 
             // comboBox10
             // 
@@ -1016,33 +1062,23 @@
             this.label21.TabIndex = 52;
             this.label21.Text = "Date From";
             // 
-            // richTextBox1
+            // incomerichTextBox
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(684, 10);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(586, 253);
-            this.richTextBox1.TabIndex = 50;
-            this.richTextBox1.Text = "";
+            this.incomerichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.incomerichTextBox.Location = new System.Drawing.Point(684, 10);
+            this.incomerichTextBox.Name = "incomerichTextBox";
+            this.incomerichTextBox.Size = new System.Drawing.Size(586, 253);
+            this.incomerichTextBox.TabIndex = 50;
+            this.incomerichTextBox.Text = "";
             // 
-            // button9
+            // comboBoxIncomeType_Of_Sale
             // 
-            this.button9.BackColor = System.Drawing.Color.SteelBlue;
-            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button9.Location = new System.Drawing.Point(123, 222);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(128, 61);
-            this.button9.TabIndex = 49;
-            this.button9.Text = "ADD a New Type";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(27, 188);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(224, 28);
-            this.comboBox5.TabIndex = 48;
+            this.comboBoxIncomeType_Of_Sale.FormattingEnabled = true;
+            this.comboBoxIncomeType_Of_Sale.Location = new System.Drawing.Point(27, 188);
+            this.comboBoxIncomeType_Of_Sale.Name = "comboBoxIncomeType_Of_Sale";
+            this.comboBoxIncomeType_Of_Sale.Size = new System.Drawing.Size(224, 28);
+            this.comboBoxIncomeType_Of_Sale.TabIndex = 48;
+            this.comboBoxIncomeType_Of_Sale.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -1059,7 +1095,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label25.Location = new System.Drawing.Point(296, 150);
+            this.label25.Location = new System.Drawing.Point(296, 161);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(143, 20);
             this.label25.TabIndex = 46;
@@ -1079,7 +1115,7 @@
             // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(289, 109);
+            this.textBox17.Location = new System.Drawing.Point(289, 45);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(251, 26);
             this.textBox17.TabIndex = 39;
@@ -1088,7 +1124,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label20.Location = new System.Drawing.Point(296, 214);
+            this.label20.Location = new System.Drawing.Point(296, 231);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(71, 20);
             this.label20.TabIndex = 36;
@@ -1097,7 +1133,7 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(288, 237);
+            this.textBox14.Location = new System.Drawing.Point(288, 254);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(252, 26);
             this.textBox14.TabIndex = 35;
@@ -1112,32 +1148,6 @@
             this.label18.TabIndex = 34;
             this.label18.Text = "Info";
             this.label18.Click += new System.EventHandler(this.label18_Click_1);
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(289, 45);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(382, 26);
-            this.textBox11.TabIndex = 33;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(123, 79);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 61);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "ADD a new Category";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(27, 45);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(224, 28);
-            this.comboBox4.TabIndex = 28;
             // 
             // label15
             // 
@@ -1156,20 +1166,20 @@
             this.tabPage4.Controls.Add(this.panel3);
             this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1286, 659);
+            this.tabPage4.Size = new System.Drawing.Size(1297, 659);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Wages";
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.WageComboBox2);
             this.panel9.Controls.Add(this.label52);
+            this.panel9.Controls.Add(this.WageComboBox1);
             this.panel9.Controls.Add(this.Wage2);
             this.panel9.Controls.Add(this.Wage1);
-            this.panel9.Controls.Add(this.WageComboBox2);
             this.panel9.Controls.Add(this.richTextBoxWage);
             this.panel9.Controls.Add(this.label12);
-            this.panel9.Controls.Add(this.WageComboBox1);
             this.panel9.Controls.Add(this.ComboBoxWage);
             this.panel9.Controls.Add(this.panel4);
             this.panel9.Controls.Add(this.label16);
@@ -1185,37 +1195,43 @@
             this.panel9.Size = new System.Drawing.Size(1295, 439);
             this.panel9.TabIndex = 84;
             // 
+            // WageComboBox2
+            // 
+            this.WageComboBox2.Location = new System.Drawing.Point(643, 37);
+            this.WageComboBox2.Name = "WageComboBox2";
+            this.WageComboBox2.Size = new System.Drawing.Size(175, 26);
+            this.WageComboBox2.TabIndex = 86;
+            // 
             // label52
             // 
             this.label52.AutoSize = true;
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label52.Location = new System.Drawing.Point(929, 13);
+            this.label52.Location = new System.Drawing.Point(958, 13);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(103, 20);
             this.label52.TabIndex = 86;
             this.label52.Text = "Total in £££";
             // 
+            // WageComboBox1
+            // 
+            this.WageComboBox1.Location = new System.Drawing.Point(438, 36);
+            this.WageComboBox1.Name = "WageComboBox1";
+            this.WageComboBox1.Size = new System.Drawing.Size(185, 26);
+            this.WageComboBox1.TabIndex = 85;
+            // 
             // Wage2
             // 
-            this.Wage2.Location = new System.Drawing.Point(933, 37);
+            this.Wage2.Location = new System.Drawing.Point(962, 37);
             this.Wage2.Name = "Wage2";
             this.Wage2.Size = new System.Drawing.Size(102, 26);
             this.Wage2.TabIndex = 5;
             // 
             // Wage1
             // 
-            this.Wage1.Location = new System.Drawing.Point(803, 36);
+            this.Wage1.Location = new System.Drawing.Point(835, 37);
             this.Wage1.Name = "Wage1";
             this.Wage1.Size = new System.Drawing.Size(102, 26);
             this.Wage1.TabIndex = 4;
-            // 
-            // WageComboBox2
-            // 
-            this.WageComboBox2.FormattingEnabled = true;
-            this.WageComboBox2.Location = new System.Drawing.Point(643, 35);
-            this.WageComboBox2.Name = "WageComboBox2";
-            this.WageComboBox2.Size = new System.Drawing.Size(129, 28);
-            this.WageComboBox2.TabIndex = 3;
             // 
             // richTextBoxWage
             // 
@@ -1230,24 +1246,16 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(112, 2);
+            this.label12.Location = new System.Drawing.Point(74, 1);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(272, 31);
             this.label12.TabIndex = 27;
             this.label12.Text = "Select an Employee";
             // 
-            // WageComboBox1
-            // 
-            this.WageComboBox1.FormattingEnabled = true;
-            this.WageComboBox1.Location = new System.Drawing.Point(488, 35);
-            this.WageComboBox1.Name = "WageComboBox1";
-            this.WageComboBox1.Size = new System.Drawing.Size(129, 28);
-            this.WageComboBox1.TabIndex = 2;
-            // 
             // ComboBoxWage
             // 
             this.ComboBoxWage.FormattingEnabled = true;
-            this.ComboBoxWage.Location = new System.Drawing.Point(118, 34);
+            this.ComboBoxWage.Location = new System.Drawing.Point(80, 33);
             this.ComboBoxWage.Name = "ComboBoxWage";
             this.ComboBoxWage.Size = new System.Drawing.Size(342, 28);
             this.ComboBoxWage.TabIndex = 1;
@@ -1312,7 +1320,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Location = new System.Drawing.Point(799, 13);
+            this.label16.Location = new System.Drawing.Point(831, 14);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(102, 20);
             this.label16.TabIndex = 32;
@@ -1337,7 +1345,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label17.Location = new System.Drawing.Point(656, 11);
+            this.label17.Location = new System.Drawing.Point(639, 11);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(73, 20);
             this.label17.TabIndex = 38;
@@ -1358,7 +1366,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label19.Location = new System.Drawing.Point(493, 12);
+            this.label19.Location = new System.Drawing.Point(434, 11);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(94, 20);
             this.label19.TabIndex = 40;
@@ -1397,17 +1405,17 @@
             // 
             this.WageEmployeeID.Location = new System.Drawing.Point(21, 34);
             this.WageEmployeeID.Name = "WageEmployeeID";
-            this.WageEmployeeID.Size = new System.Drawing.Size(67, 26);
+            this.WageEmployeeID.Size = new System.Drawing.Size(41, 26);
             this.WageEmployeeID.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel3.Controls.Add(this.Wage4);
+            this.panel3.Controls.Add(this.Wage5);
             this.panel3.Controls.Add(this.Wage6);
             this.panel3.Controls.Add(this.label50);
-            this.panel3.Controls.Add(this.Wage5);
             this.panel3.Controls.Add(this.label51);
-            this.panel3.Controls.Add(this.Wage4);
             this.panel3.Controls.Add(this.label53);
             this.panel3.Controls.Add(this.button18);
             this.panel3.Controls.Add(this.label38);
@@ -1417,6 +1425,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1275, 174);
             this.panel3.TabIndex = 48;
+            // 
+            // Wage4
+            // 
+            this.Wage4.Location = new System.Drawing.Point(21, 42);
+            this.Wage4.Name = "Wage4";
+            this.Wage4.Size = new System.Drawing.Size(225, 26);
+            this.Wage4.TabIndex = 88;
+            // 
+            // Wage5
+            // 
+            this.Wage5.Location = new System.Drawing.Point(338, 44);
+            this.Wage5.Name = "Wage5";
+            this.Wage5.Size = new System.Drawing.Size(245, 26);
+            this.Wage5.TabIndex = 87;
+            this.Wage5.ValueChanged += new System.EventHandler(this.Wage5_ValueChanged);
             // 
             // Wage6
             // 
@@ -1436,14 +1459,6 @@
             this.label50.TabIndex = 79;
             this.label50.Text = "Select an Employee";
             // 
-            // Wage5
-            // 
-            this.Wage5.FormattingEnabled = true;
-            this.Wage5.Location = new System.Drawing.Point(322, 44);
-            this.Wage5.Name = "Wage5";
-            this.Wage5.Size = new System.Drawing.Size(268, 28);
-            this.Wage5.TabIndex = 1;
-            // 
             // label51
             // 
             this.label51.AutoSize = true;
@@ -1453,14 +1468,6 @@
             this.label51.Size = new System.Drawing.Size(73, 20);
             this.label51.TabIndex = 77;
             this.label51.Text = "Date To";
-            // 
-            // Wage4
-            // 
-            this.Wage4.FormattingEnabled = true;
-            this.Wage4.Location = new System.Drawing.Point(14, 44);
-            this.Wage4.Name = "Wage4";
-            this.Wage4.Size = new System.Drawing.Size(268, 28);
-            this.Wage4.TabIndex = 0;
             // 
             // label53
             // 
@@ -1491,9 +1498,9 @@
             this.label38.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label38.Location = new System.Drawing.Point(17, 100);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(277, 20);
+            this.label38.Size = new System.Drawing.Size(272, 20);
             this.label38.TabIndex = 72;
-            this.label38.Text = "Select a folder to send the file to:";
+            this.label38.Text = "Select a Location to save the file";
             // 
             // Wage7
             // 
@@ -1523,7 +1530,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1286, 659);
+            this.tabPage2.Size = new System.Drawing.Size(1297, 659);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Employees";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1532,6 +1539,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel1.Controls.Add(this.Emp11);
             this.panel1.Controls.Add(this.label49);
             this.panel1.Controls.Add(this.Emp5);
             this.panel1.Controls.Add(this.label11);
@@ -1552,7 +1560,6 @@
             this.panel1.Controls.Add(this.Emp2);
             this.panel1.Controls.Add(this.Emp3);
             this.panel1.Controls.Add(this.Emp4);
-            this.panel1.Controls.Add(this.Emp11);
             this.panel1.Controls.Add(this.Emp10);
             this.panel1.Controls.Add(this.Emp9);
             this.panel1.Controls.Add(this.Emp8);
@@ -1563,6 +1570,13 @@
             this.panel1.Size = new System.Drawing.Size(1279, 617);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // Emp11
+            // 
+            this.Emp11.Location = new System.Drawing.Point(49, 556);
+            this.Emp11.Name = "Emp11";
+            this.Emp11.Size = new System.Drawing.Size(271, 26);
+            this.Emp11.TabIndex = 88;
             // 
             // label49
             // 
@@ -1832,13 +1846,6 @@
             this.Emp4.Size = new System.Drawing.Size(648, 26);
             this.Emp4.TabIndex = 3;
             // 
-            // Emp11
-            // 
-            this.Emp11.Location = new System.Drawing.Point(49, 558);
-            this.Emp11.Name = "Emp11";
-            this.Emp11.Size = new System.Drawing.Size(271, 26);
-            this.Emp11.TabIndex = 10;
-            // 
             // Emp10
             // 
             this.Emp10.Location = new System.Drawing.Point(49, 502);
@@ -1882,7 +1889,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 39);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1286, 659);
+            this.tabPage5.Size = new System.Drawing.Size(1297, 659);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Settings";
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
@@ -1892,7 +1899,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1304, 708);
+            this.ClientSize = new System.Drawing.Size(1315, 708);
             this.Controls.Add(this.Settings);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -1939,7 +1946,6 @@
         private System.Windows.Forms.TextBox Emp2;
         private System.Windows.Forms.TextBox Emp3;
         private System.Windows.Forms.TextBox Emp4;
-        private System.Windows.Forms.TextBox Emp11;
         private System.Windows.Forms.TextBox Emp10;
         private System.Windows.Forms.TextBox Emp9;
         private System.Windows.Forms.TextBox Emp8;
@@ -1975,28 +1981,23 @@
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBoxIncomeType_Of_Sale;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox incomerichTextBox;
         private System.Windows.Forms.ComboBox comboBox10;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button incomebutton10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button buttonAddExpensesBill_Type;
         private System.Windows.Forms.ComboBox comboBoxbuttonExpensesBill_Type;
         private System.Windows.Forms.Label label31;
@@ -2025,11 +2026,11 @@
         private System.Windows.Forms.Button BtnWageEditPayment;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button incomebutton9;
         private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button incomebutton7;
+        private System.Windows.Forms.Button incomebutton8;
         private System.Windows.Forms.Button BtnWageUpdatePayment;
         private System.Windows.Forms.Button BtnWageDeletePayment;
         private System.Windows.Forms.RichTextBox richTextBox3;
@@ -2046,26 +2047,19 @@
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.ComboBox comboBox13;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.ComboBox comboBox14;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.ComboBox comboBox15;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.ComboBox comboBox16;
         private System.Windows.Forms.ComboBox comboBox17;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Button button29;
         private System.Windows.Forms.ComboBox comboBox18;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox comboBox19;
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button buttonDeleteExpensesCategory;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox exp6;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Button button33;
         private System.Windows.Forms.RichTextBox richTextBoxEmp;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label14;
@@ -2077,17 +2071,30 @@
         private System.Windows.Forms.TextBox Emp7;
         private System.Windows.Forms.ComboBox Wage6;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.ComboBox Wage5;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.ComboBox Wage4;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.ComboBox WageComboBox1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox Wage2;
         private System.Windows.Forms.TextBox Wage1;
-        private System.Windows.Forms.ComboBox WageComboBox2;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.DateTimePicker exp6;
+        private System.Windows.Forms.DateTimePicker WageComboBox2;
+        private System.Windows.Forms.DateTimePicker WageComboBox1;
+        private System.Windows.Forms.DateTimePicker comboBox14;
+        private System.Windows.Forms.DateTimePicker comboBox16;
+        private System.Windows.Forms.DateTimePicker Wage4;
+        private System.Windows.Forms.DateTimePicker Wage5;
+        private System.Windows.Forms.DateTimePicker Emp11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox comboBoxIncomeCategory;
+        private System.Windows.Forms.Button incomebutton6;
+        private System.Windows.Forms.Button incomebutton5;
+        private System.Windows.Forms.Button incomebutton4;
+        private System.Windows.Forms.Button incomebutton3;
+        private System.Windows.Forms.Button incomebutton2;
+        private System.Windows.Forms.Button incomebutton1;
     }
 }
 
