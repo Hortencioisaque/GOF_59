@@ -15,8 +15,8 @@ namespace G
     public partial class GOF_59 : Form
     {
         string strID = string.Empty;//Employees - ID from the Employees table
-
         string mdfFile = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\horte\source\repos\GOF_59\GDB.mdb";
+        
         //string mdfFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\GDB.mdb";//path of the pc/user Documents folder
 
 
@@ -29,6 +29,7 @@ namespace G
         //
         //
         //***************************************************************************************************************************************************************************************************************************
+        
         private void Form1_Load(object sender, EventArgs e)// On load, displaying 
         {
             //
@@ -371,7 +372,83 @@ namespace G
             //
             //***********************************************************************************************************************************************************************************************************************
 
+
+            //***********************************************************************************************************************************************************************************************************************
+            //
+            //
+            //START of On Load Income Payment_Method combo box On Load -  ComboBox to show Expenses Income, Bill type & Company name from the database
+            //
+            //
+            //***********************************************************************************************************************************************************************************************************************
+
+            //START of Updating ComboBox to show Income Payment_Method
+            //
+            //
+            //select command
+            //
+
+
+
+            comboBoxIncomePayment_Method.AutoCompleteMode = AutoCompleteMode.Suggest;//ComboBox Auto suggestion when typing first characters 
+            comboBoxIncomePayment_Method.AutoCompleteSource = AutoCompleteSource.ListItems;//ComboBox Auto suggestion when typing first characters 
+
+
+
+            comboBoxIncomePayment_Method.Sorted = true;
+
+            using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+            {
+                List<string> ListOfIncome_Payment_Method = new List<string>();
+                //
+                //collecting from Income
+                //
+                using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Income_Payment_Method", connection))
+                {
+                    connection.Open();
+
+                    DataTable table = new DataTable();
+                    OleDbDataAdapter adapter = new OleDbDataAdapter();
+                    adapter.SelectCommand = selectCommand;
+                    adapter.Fill(table);
+
+                    foreach (DataRow row in table.Rows)
+                    {
+                        object Payment_MethodNameValue = row["Payment_Method"];
+                        string strIncomePayment_MethodName = Payment_MethodNameValue + "";//
+
+                        if (!ListOfIncome_Payment_Method.Contains(strIncomePayment_MethodName))
+                        {
+                            comboBoxIncomePayment_Method.Items.Add(strIncomePayment_MethodName);//adding items to the comboBox Income Payment_Method Tab
+                            ListOfIncome_Payment_Method.Add(strIncomePayment_MethodName);
+                        }
+
+                    }
+                }
+                //
+                //End of collecting from Income Payment_Method
+                //
+            }
+            //***********************************************************************************************************************************************************************************************************************
+            //
+            //
+            //END of Income On LoadPayment_Method combo box On Load -  ComboBox to show Expenses Income, Bill type & Company name from the database
+            //
+            //
+            //
+            //***********************************************************************************************************************************************************************************************************************
+
+            //########
         }
+
+        //***************************************************************************************************************************************************************************************************************************
+        //
+        //
+        //
+        //START On Load -  showing Expenses category, Bill type & Company name when the program starts
+        //
+        //
+        //
+        //***************************************************************************************************************************************************************************************************************************
 
         public GOF_59()
         {
@@ -1655,6 +1732,85 @@ namespace G
         //END of Submit buttom expenses
         //
 
+        //
+        //Start of Selecting expenses records
+        //
+        
+        private void button26_Click(object sender, EventArgs e)
+        { }
+
+
+        //
+        //
+        //Start of Selecting expenses records
+        //
+        //
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+            {
+                using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses", connection))
+                {
+                    connection.Open();
+
+                    List<string> ListOfNames = new List<string>();
+                    int icount = 0;
+                    int icount2 = 0;
+
+                    DataTable table = new DataTable();
+                    OleDbDataAdapter adapter = new OleDbDataAdapter();
+                    adapter.SelectCommand = selectCommand;
+                    adapter.Fill(table);
+
+                    foreach (DataRow row in table.Rows)
+                    {
+                        // collect data here.
+                        icount++;
+                    }
+                    
+                    
+                    foreach (DataRow row in table.Rows)
+                    {
+                        icount2++;
+                        if (icount2 == icount - 4 || icount2 == icount - 3 || icount2 == icount - 2 || icount2 == icount -1 || icount2 == icount)
+                        {
+                            
+                            object CompanyExpensesName = row["Company_EXPENSES_Name"];
+                            object CategoryExpensesName = row["Category_EXPENSES_Name"];
+                            object BillTypeExpensesName = row["Bill_type_EXPENSES_Name"];
+                            object ExpensesInfo = row["Info"];
+                            object ExpensesBillRef = row["Bill_Ref"];
+                            object ExpensesBillAmoutNet = row["Bill_amount_net"];
+                            object ExpensesBillAfetTax = row["Bill_amount_after_Tax"];
+                            object ExpensesBillGross = row["Bill_gross"];
+                            object ExpensesDateofBilling = row["Date_of_Billing"];
+
+                            string strIncomeCategoryName = CompanyExpensesName + "";
+                            string strCategoryExpensesName = CategoryExpensesName + "";
+                            string strBillTypeExpensesName = BillTypeExpensesName + "";
+                            string strExpensesInfo = ExpensesInfo + "";
+                            string strExpensesBillRef = ExpensesBillRef + "";
+                            string strExpensesBillAmoutNet = ExpensesBillAmoutNet + "";
+                            string strExpensesBillAfetTax = ExpensesBillAfetTax + "";
+                            string strExpensesBillGross = ExpensesBillGross + "";
+                            string strExpensesDateofBilling = ExpensesDateofBilling + "";
+
+                            richTextBox3.AppendText("Details of the Last 5 Expenses Record Added :    " + Environment.NewLine);
+                            richTextBox3.AppendText("Record " + icount2 + "  -  " + strIncomeCategoryName + " " + strCategoryExpensesName + " " + BillTypeExpensesName  + " " + strExpensesInfo + " " + strExpensesBillRef + " " + strExpensesBillAmoutNet + " " + strExpensesBillAfetTax + " " + strExpensesBillGross + "  " + strExpensesDateofBilling + Environment.NewLine);
+                            richTextBox3.AppendText(Environment.NewLine);
+
+                        }
+                    }
+                }
+            }
+        }
+
+        //
+        //
+        //End of Selecting expenses records
+        //
+        //
 
         //***************************************************************************************************************************************************************************************************************************
         //
@@ -1735,10 +1891,10 @@ namespace G
                 //
                 //START of clearing fields and comboBox to update comboBox with new records
                 //
-                /*
-                comboBoxEmployees.Items.Clear();
-                comboBoxEmployees.ResetText();
-                */
+                
+                //comboBoxIncomeCategory.Items.Clear();
+                //comboBoxIncomeCategory.ResetText();
+                
                 //
                 //END of clearing fields and comboBox to update comboBox with new records
                 //
@@ -1868,6 +2024,64 @@ namespace G
         }
 
 
+        private void incomebutton5_Click_1(object sender, EventArgs e)
+        {
+
+            //
+            //START of Delete Income Payment_Method
+            //
+
+            incomerichTextBox.Clear();
+            //
+            //START of DELETING Income_Payment_Method  record from the database.
+            //            
+
+            if (comboBoxIncomePayment_Method.Text != "")
+            {
+                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+                {
+                    using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM Income_Payment_Method WHERE [Payment_Method] = ?", connection))
+                    {
+                        connection.Open();
+
+                        deleteCommand.Parameters.AddWithValue("@Payment_Method", comboBoxIncomePayment_Method.Text);
+
+                        deleteCommand.ExecuteNonQuery();
+                    }
+                }
+
+                //
+                //START of Showing what has been updated into the database
+                //
+                incomerichTextBox.AppendText("Records Deleted Successfully:    " + Environment.NewLine);
+                incomerichTextBox.AppendText(comboBoxIncomePayment_Method.Text + Environment.NewLine);
+                comboBoxIncomePayment_Method.Items.Remove(comboBoxIncomePayment_Method.Text);
+
+
+                //
+                //END of Showing what has been updated into the database
+                //
+
+                //
+                //END of DELETING Income_Payment_Method record from the database.
+                //
+
+                //
+                //START of clearing fields and comboBox to update comboBox with new records
+                //
+
+                //comboBoxIncomePayment_Method.Items.Clear();
+                //comboBoxIncomePayment_Method.ResetText();
+
+                //
+                //END of clearing fields and comboBox to update comboBox with new records
+                //
+            }
+            else
+            {
+                MessageBox.Show("Please select an entry");
+            }
+        }
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -1876,21 +2090,381 @@ namespace G
         private void incomebutton3_Click(object sender, EventArgs e)
         {
 
+            //
+            //START of Delete Income Type_Of_Sale
+            //
+
+            incomerichTextBox.Clear();
+            //
+            //START of DELETING Income_Type_Of_Sale  record from the database.
+            //            
+
+            if (comboBoxIncomeType_Of_Sale.Text != "")
+            {
+                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+                {
+                    using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM Income_Type_Of_Sale WHERE [Type_Of_Sale] = ?", connection))
+                    {
+                        connection.Open();
+
+                        deleteCommand.Parameters.AddWithValue("@Type_Of_Sale", comboBoxIncomeType_Of_Sale.Text);
+
+                        deleteCommand.ExecuteNonQuery();
+                    }
+                }
+
+                //
+                //START of Showing what has been updated into the database
+                //
+                incomerichTextBox.AppendText("Records Deleted Successfully:    " + Environment.NewLine);
+                incomerichTextBox.AppendText(comboBoxIncomeType_Of_Sale.Text + Environment.NewLine);
+                comboBoxIncomeType_Of_Sale.Items.Remove(comboBoxIncomeType_Of_Sale.Text);
+
+
+                //
+                //END of Showing what has been updated into the database
+                //
+
+                //
+                //END of DELETING Income_Type_Of_Sale record from the database.
+                //
+
+                //
+                //START of clearing fields and comboBox to update comboBox with new records
+                //
+                
+                //comboBoxIncomeType_Of_Sale.Items.Clear();
+                //comboBoxIncomeType_Of_Sale.ResetText();
+                
+                //
+                //END of clearing fields and comboBox to update comboBox with new records
+                //
+            }
+            else
+            {
+                MessageBox.Show("Please select an entry");
+            }
         }
 
         private void incomebutton4_Click(object sender, EventArgs e)
         {
 
+            //
+            //Adding a new Type_Of_Sale Income to the database using a input message box
+            //
+            List<string> List_Type_Of_Sale = new List<string>();// to add all the Type_Of_Sale to a list for latter to be checked if new entry already exists in the table
+            string NewType_Of_SaleIncomeValue = Interaction.InputBox("Please insert a new Type_Of_Sale", "New Type_Of_Sale", "");
+
+            incomerichTextBox.AppendText(NewType_Of_SaleIncomeValue);
+
+            //
+            //End of collecting a new Type_Of_Sale Income to add in the database using a inputBox message box
+            //
+            if (NewType_Of_SaleIncomeValue != "" && comboBoxIncomeType_Of_Sale.Text == "")
+            {
+
+                incomerichTextBox.Clear();
+
+                //
+                //START of new records to the Income_Type_Of_Sale Table.
+                //
+                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
+                {
+
+                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Income_Type_Of_Sale ([Type_Of_Sale]) VALUES (?)", connection))//insert command
+                    using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Income_Type_Of_Sale", connection))
+                    {
+
+                        connection.Open();
+
+                        //
+                        //start of checking if entry exists in database
+                        //
+                        DataTable table = new DataTable();
+                        OleDbDataAdapter adapter = new OleDbDataAdapter();
+                        adapter.SelectCommand = selectCommand;
+                        adapter.Fill(table);
+
+                        foreach (DataRow row in table.Rows)
+                        {
+
+                            object nameValue = row["Type_Of_Sale"];
+
+                            string strName = nameValue.ToString();
+
+                            if (!List_Type_Of_Sale.Contains(strName))
+                            {
+                                List_Type_Of_Sale.Add(strName);
+                            }
+
+                            //
+                            //End of checking if entry exists in database
+                            //
+                        }
+
+                        if (List_Type_Of_Sale.Contains(NewType_Of_SaleIncomeValue))
+                        {
+                            MessageBox.Show("Type_Of_Sale already exist");
+                        }
+                        //
+                        //inserting into the database
+                        //
+                        else
+                        {
+                            insertCommand.Parameters.AddWithValue("Type_Of_Sale", NewType_Of_SaleIncomeValue);
+
+                            insertCommand.ExecuteNonQuery();
+
+                            connection.Close();
+
+                            //
+                            //end of inserting into database
+                            //
+
+                            //
+                            //START of Showing what has been added to the database
+                            //
+                            incomerichTextBox.AppendText("Records Inserted:    " + Environment.NewLine);
+                            incomerichTextBox.AppendText(Environment.NewLine);
+                            incomerichTextBox.AppendText(NewType_Of_SaleIncomeValue + "    " + Environment.NewLine);
+                            //
+                            //END of Showing what has been added to the database
+                            //
+
+                            //
+                            //adding to the comboBox
+                            //
+
+                            comboBoxIncomeType_Of_Sale.Items.Add(NewType_Of_SaleIncomeValue);
+
+                            //
+                            //end of adding to the comboBox
+                            //
+                        }
+
+
+
+                    }
+                }
+                //
+                //END of Adding a new Income Type_Of_Sale
+                //
+
+                //
+                //START of clearing fields and comboBox to update comboBox with new records
+                //
+                /*
+                comboBoxIncomeType_Of_Sale.Items.Clear();
+                comboBoxIncomeType_Of_Sale.ResetText();
+                */
+                //
+                //END of clearing fields and comboBox to update comboBox with new records
+                //
+
+                // END of on click to check for an existing entri and add a new entry to Type_Of_Sale Income
+            }
         }
 
         private void incomebutton5_Click(object sender, EventArgs e)
         {
 
-        }
+            //
+            //Adding a new Payment_Method Income to the database using a input message box
+            //
+            List<string> List_Payment_Method = new List<string>();// to add all the Payment_Method to a list for latter to be checked if new entry already exists in the table
+            string NewPayment_MethodIncomeValue = Interaction.InputBox("Please insert a new Payment_Method", "New Payment_Method", "");
 
+            incomerichTextBox.AppendText(NewPayment_MethodIncomeValue);
+
+            //
+            //End of collecting a new Payment_Method Income to add in the database using a inputBox message box
+            //
+            if (NewPayment_MethodIncomeValue != "" && comboBoxIncomePayment_Method.Text == "")
+            {
+
+                incomerichTextBox.Clear();
+
+                //
+                //START of new records to the Income_Payment_Method Table.
+                //
+                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
+                {
+
+                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Income_Payment_Method ([Payment_Method]) VALUES (?)", connection))//insert command
+                    using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Income_Payment_Method", connection))
+                    {
+
+                        connection.Open();
+
+                        //
+                        //start of checking if entry exists in database
+                        //
+                        DataTable table = new DataTable();
+                        OleDbDataAdapter adapter = new OleDbDataAdapter();
+                        adapter.SelectCommand = selectCommand;
+                        adapter.Fill(table);
+
+                        foreach (DataRow row in table.Rows)
+                        {
+
+                            object nameValue = row["Payment_Method"];
+
+                            string strName = nameValue.ToString();
+
+                            if (!List_Payment_Method.Contains(strName))
+                            {
+                                List_Payment_Method.Add(strName);
+                            }
+
+                            //
+                            //End of checking if entry exists in database
+                            //
+                        }
+
+                        if (List_Payment_Method.Contains(NewPayment_MethodIncomeValue))
+                        {
+                            MessageBox.Show("Payment_Method already exist");
+                        }
+                        //
+                        //inserting into the database
+                        //
+                        else
+                        {
+                            insertCommand.Parameters.AddWithValue("Payment_Method", NewPayment_MethodIncomeValue);
+
+                            insertCommand.ExecuteNonQuery();
+
+                            connection.Close();
+
+                            //
+                            //end of inserting into database
+                            //
+
+                            //
+                            //START of Showing what has been added to the database
+                            //
+                            incomerichTextBox.AppendText("Records Inserted:    " + Environment.NewLine);
+                            incomerichTextBox.AppendText(Environment.NewLine);
+                            incomerichTextBox.AppendText(NewPayment_MethodIncomeValue + "    " + Environment.NewLine);
+                            //
+                            //END of Showing what has been added to the database
+                            //
+
+                            //
+                            //adding to the comboBox
+                            //
+
+                            comboBoxIncomePayment_Method.Items.Add(NewPayment_MethodIncomeValue);
+
+                            //
+                            //end of adding to the comboBox
+                            //
+                        }
+
+
+
+                    }
+                }
+                //
+                //END of Adding a new Income Payment_Method
+                //
+
+                //
+                //START of clearing fields and comboBox to update comboBox with new records
+                //
+                /*
+                comboBoxIncomePayment_Method.Items.Clear();
+                comboBoxIncomePayment_Method.ResetText();
+                */
+                //
+                //END of clearing fields and comboBox to update comboBox with new records
+                //
+
+                // END of on click to check for an existing entri and add a new entry to Payment_Method Income
+            }
+        }
+        // Submit
         private void incomebutton6_Click(object sender, EventArgs e)
         {
+            
+            //
+            //
+            //START of Adding a new Employee
+            //
+            //
 
+            incomerichTextBox.Clear();
+            //
+            //inserting into the database
+            //
+            if (incTxt1.Text == "" || incDtm.Text == "" || incTxt2.Text == "")
+            {
+                MessageBox.Show("Please insert data to all fields");
+
+            }
+            else
+            {
+                using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
+                {
+
+                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Income ([Category],[Type_Of_Sale],[Info],[Payment_Method],[Date1],[Amount]) VALUES (?,?,?,?,?,?)", connection))//insert command
+                    using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Income", connection))
+                    {
+                        connection.Open();
+
+                        //
+                        //start of checking if entry exists in database
+                        //
+                        DataTable table = new DataTable();
+                        OleDbDataAdapter adapter = new OleDbDataAdapter();
+                        adapter.SelectCommand = selectCommand;
+                        adapter.Fill(table);
+
+                        int iEntryCount = 0;
+
+
+
+                        //
+                        //inserting into the database
+                        //
+                        /*
+                        insertCommand.Parameters.AddWithValue("@Category", comboBoxIncomeCategory.Text);
+                        insertCommand.Parameters.AddWithValue("@Type_Of_Sale", comboBoxIncomeType_Of_Sale.Text);
+                        insertCommand.Parameters.AddWithValue("@Info", incTxt1.Text);
+                        insertCommand.Parameters.AddWithValue("@Amount", incTxt2.Text);
+                        insertCommand.Parameters.AddWithValue("@Payment_Method", comboBoxIncomePayment_Method.Text);
+                        insertCommand.Parameters.AddWithValue("@Date1", incDtm.Value);
+
+
+                        insertCommand.ExecuteNonQuery();
+                        */
+                        //
+                        //end of inserting into database
+                        //
+
+                        //
+                        //START of Showing what has been added to the database
+                        //
+                        incomerichTextBox.AppendText("Details of the New Record Added :    " + Environment.NewLine);
+                        incomerichTextBox.AppendText(Environment.NewLine);
+                        incomerichTextBox.AppendText(comboBoxIncomeCategory.Text + "    " + Environment.NewLine);
+                        incomerichTextBox.AppendText(comboBoxIncomeType_Of_Sale.Text + "    " + Environment.NewLine);
+                        incomerichTextBox.AppendText(incTxt1.Text + "    " + Environment.NewLine);
+                        incomerichTextBox.AppendText(incDtm.Value + "    " + Environment.NewLine);
+                        incomerichTextBox.AppendText(comboBoxIncomePayment_Method.Text + "    " + Environment.NewLine);
+                        incomerichTextBox.AppendText(incTxt2.Text + "    " + Environment.NewLine);
+                        //
+                        //END of Showing what has been added to the database
+                        //
+                    }
+                    
+                }
+                
+            }
+            //
+            //END of Adding a new Income
+            //
+            
         }
 
 
@@ -2038,11 +2612,13 @@ namespace G
                     }
 
                     //Start of Adding all items from the database into a list in order to check if new entry already exists.
+                    /*
                     foreach (string ListOfEntries in ListOfEntry)
                     {
                         richTextBoxWage.AppendText("-----------------------------------------------------------------------------------------" + Environment.NewLine);
                         richTextBoxWage.AppendText(ListOfEntries + "    " + Environment.NewLine);
                     }
+                    */
                     // End of Adding all items from the database into a list in order to check if new entry already exists.
 
                     //checking if entry already exists
@@ -2202,5 +2778,6 @@ namespace G
         private void richTextBox3_TextChanged(object sender, EventArgs e)
         { }
 
+        
     }
 }

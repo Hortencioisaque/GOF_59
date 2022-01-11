@@ -50,7 +50,7 @@
             this.button27 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
             this.textBox27 = new System.Windows.Forms.TextBox();
-            this.button28 = new System.Windows.Forms.Button();
+            this.buttonShowRecordsExpenses = new System.Windows.Forms.Button();
             this.comboBox13 = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
@@ -78,15 +78,16 @@
             this.comboBoxExpensesCategory = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.incomebutton6 = new System.Windows.Forms.Button();
             this.incomebutton5 = new System.Windows.Forms.Button();
+            this.incomebutton6 = new System.Windows.Forms.Button();
+            this.incomebuttonAddNewPaymentMethod = new System.Windows.Forms.Button();
             this.incomebutton4 = new System.Windows.Forms.Button();
             this.incomebutton3 = new System.Windows.Forms.Button();
             this.incomebutton2 = new System.Windows.Forms.Button();
             this.incomebutton1 = new System.Windows.Forms.Button();
             this.comboBoxIncomeCategory = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
+            this.incDtm = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxIncomePayment_Method = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label29 = new System.Windows.Forms.Label();
@@ -113,9 +114,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.incTxt1 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.incTxt2 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -186,6 +187,7 @@
             this.Emp6 = new System.Windows.Forms.TextBox();
             this.Emp1 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.buttonShowExpenses = new System.Windows.Forms.Button();
             this.Settings.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -224,6 +226,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage1.Controls.Add(this.buttonShowExpenses);
             this.tabPage1.Controls.Add(this.exp6);
             this.tabPage1.Controls.Add(this.button32);
             this.tabPage1.Controls.Add(this.button31);
@@ -359,6 +362,7 @@
             this.button26.TabIndex = 0;
             this.button26.Text = "SELECT Record";
             this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // button25
             // 
@@ -377,7 +381,7 @@
             this.submitExpBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.submitExpBTN.Location = new System.Drawing.Point(308, 348);
             this.submitExpBTN.Name = "submitExpBTN";
-            this.submitExpBTN.Size = new System.Drawing.Size(382, 61);
+            this.submitExpBTN.Size = new System.Drawing.Size(270, 61);
             this.submitExpBTN.TabIndex = 9;
             this.submitExpBTN.Text = "SUBMIT";
             this.submitExpBTN.UseVisualStyleBackColor = false;
@@ -393,7 +397,7 @@
             this.panel6.Controls.Add(this.button27);
             this.panel6.Controls.Add(this.label43);
             this.panel6.Controls.Add(this.textBox27);
-            this.panel6.Controls.Add(this.button28);
+            this.panel6.Controls.Add(this.buttonShowRecordsExpenses);
             this.panel6.Controls.Add(this.comboBox13);
             this.panel6.Controls.Add(this.label44);
             this.panel6.Controls.Add(this.label45);
@@ -464,15 +468,15 @@
             this.textBox27.Size = new System.Drawing.Size(306, 26);
             this.textBox27.TabIndex = 5;
             // 
-            // button28
+            // buttonShowRecordsExpenses
             // 
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.button28.Location = new System.Drawing.Point(416, 207);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(110, 61);
-            this.button28.TabIndex = 7;
-            this.button28.Text = "Get Expenses";
-            this.button28.UseVisualStyleBackColor = true;
+            this.buttonShowRecordsExpenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
+            this.buttonShowRecordsExpenses.Location = new System.Drawing.Point(416, 207);
+            this.buttonShowRecordsExpenses.Name = "buttonShowRecordsExpenses";
+            this.buttonShowRecordsExpenses.Size = new System.Drawing.Size(110, 61);
+            this.buttonShowRecordsExpenses.TabIndex = 7;
+            this.buttonShowRecordsExpenses.Text = "Get Expenses";
+            this.buttonShowRecordsExpenses.UseVisualStyleBackColor = true;
             // 
             // comboBox13
             // 
@@ -720,15 +724,16 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.DarkGray;
-            this.tabPage3.Controls.Add(this.incomebutton6);
             this.tabPage3.Controls.Add(this.incomebutton5);
+            this.tabPage3.Controls.Add(this.incomebutton6);
+            this.tabPage3.Controls.Add(this.incomebuttonAddNewPaymentMethod);
             this.tabPage3.Controls.Add(this.incomebutton4);
             this.tabPage3.Controls.Add(this.incomebutton3);
             this.tabPage3.Controls.Add(this.incomebutton2);
             this.tabPage3.Controls.Add(this.incomebutton1);
             this.tabPage3.Controls.Add(this.comboBoxIncomeCategory);
-            this.tabPage3.Controls.Add(this.dateTimePicker1);
-            this.tabPage3.Controls.Add(this.comboBox18);
+            this.tabPage3.Controls.Add(this.incDtm);
+            this.tabPage3.Controls.Add(this.comboBoxIncomePayment_Method);
             this.tabPage3.Controls.Add(this.panel5);
             this.tabPage3.Controls.Add(this.panel2);
             this.tabPage3.Controls.Add(this.incomerichTextBox);
@@ -736,9 +741,9 @@
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.label25);
             this.tabPage3.Controls.Add(this.label22);
-            this.tabPage3.Controls.Add(this.textBox17);
+            this.tabPage3.Controls.Add(this.incTxt1);
             this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Controls.Add(this.textBox14);
+            this.tabPage3.Controls.Add(this.incTxt2);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Location = new System.Drawing.Point(4, 39);
@@ -748,6 +753,18 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Incomes";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // incomebutton5
+            // 
+            this.incomebutton5.BackColor = System.Drawing.Color.OrangeRed;
+            this.incomebutton5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.incomebutton5.Location = new System.Drawing.Point(546, 166);
+            this.incomebutton5.Name = "incomebutton5";
+            this.incomebutton5.Size = new System.Drawing.Size(95, 50);
+            this.incomebutton5.TabIndex = 91;
+            this.incomebutton5.Text = "Delete Method";
+            this.incomebutton5.UseVisualStyleBackColor = false;
+            this.incomebutton5.Click += new System.EventHandler(this.incomebutton5_Click_1);
             // 
             // incomebutton6
             // 
@@ -761,17 +778,17 @@
             this.incomebutton6.UseVisualStyleBackColor = false;
             this.incomebutton6.Click += new System.EventHandler(this.incomebutton6_Click);
             // 
-            // incomebutton5
+            // incomebuttonAddNewPaymentMethod
             // 
-            this.incomebutton5.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.incomebutton5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.incomebutton5.Location = new System.Drawing.Point(445, 162);
-            this.incomebutton5.Name = "incomebutton5";
-            this.incomebutton5.Size = new System.Drawing.Size(95, 54);
-            this.incomebutton5.TabIndex = 89;
-            this.incomebutton5.Text = "ADD New";
-            this.incomebutton5.UseVisualStyleBackColor = false;
-            this.incomebutton5.Click += new System.EventHandler(this.incomebutton5_Click);
+            this.incomebuttonAddNewPaymentMethod.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.incomebuttonAddNewPaymentMethod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.incomebuttonAddNewPaymentMethod.Location = new System.Drawing.Point(445, 162);
+            this.incomebuttonAddNewPaymentMethod.Name = "incomebuttonAddNewPaymentMethod";
+            this.incomebuttonAddNewPaymentMethod.Size = new System.Drawing.Size(95, 54);
+            this.incomebuttonAddNewPaymentMethod.TabIndex = 89;
+            this.incomebuttonAddNewPaymentMethod.Text = "ADD New";
+            this.incomebuttonAddNewPaymentMethod.UseVisualStyleBackColor = false;
+            this.incomebuttonAddNewPaymentMethod.Click += new System.EventHandler(this.incomebutton5_Click);
             // 
             // incomebutton4
             // 
@@ -830,21 +847,21 @@
             this.comboBoxIncomeCategory.TabIndex = 84;
             this.comboBoxIncomeCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxIncomeCategory_SelectedIndexChanged);
             // 
-            // dateTimePicker1
+            // incDtm
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(288, 114);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(252, 26);
-            this.dateTimePicker1.TabIndex = 83;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 8, 25, 10, 58, 50, 0);
+            this.incDtm.Location = new System.Drawing.Point(288, 114);
+            this.incDtm.Name = "incDtm";
+            this.incDtm.Size = new System.Drawing.Size(252, 26);
+            this.incDtm.TabIndex = 83;
+            this.incDtm.Value = new System.DateTime(2021, 8, 25, 10, 58, 50, 0);
             // 
-            // comboBox18
+            // comboBoxIncomePayment_Method
             // 
-            this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Location = new System.Drawing.Point(288, 184);
-            this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(151, 28);
-            this.comboBox18.TabIndex = 68;
+            this.comboBoxIncomePayment_Method.FormattingEnabled = true;
+            this.comboBoxIncomePayment_Method.Location = new System.Drawing.Point(288, 184);
+            this.comboBoxIncomePayment_Method.Name = "comboBoxIncomePayment_Method";
+            this.comboBoxIncomePayment_Method.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxIncomePayment_Method.TabIndex = 68;
             // 
             // panel5
             // 
@@ -1113,12 +1130,12 @@
             this.label22.Text = "Date";
             this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
-            // textBox17
+            // incTxt1
             // 
-            this.textBox17.Location = new System.Drawing.Point(289, 45);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(251, 26);
-            this.textBox17.TabIndex = 39;
+            this.incTxt1.Location = new System.Drawing.Point(289, 45);
+            this.incTxt1.Name = "incTxt1";
+            this.incTxt1.Size = new System.Drawing.Size(251, 26);
+            this.incTxt1.TabIndex = 39;
             // 
             // label20
             // 
@@ -1131,12 +1148,12 @@
             this.label20.Text = "Amount";
             this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
-            // textBox14
+            // incTxt2
             // 
-            this.textBox14.Location = new System.Drawing.Point(288, 254);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(252, 26);
-            this.textBox14.TabIndex = 35;
+            this.incTxt2.Location = new System.Drawing.Point(288, 254);
+            this.incTxt2.Name = "incTxt2";
+            this.incTxt2.Size = new System.Drawing.Size(252, 26);
+            this.incTxt2.TabIndex = 35;
             // 
             // label18
             // 
@@ -1199,7 +1216,7 @@
             // 
             this.WageComboBox2.Location = new System.Drawing.Point(643, 37);
             this.WageComboBox2.Name = "WageComboBox2";
-            this.WageComboBox2.Size = new System.Drawing.Size(175, 26);
+            this.WageComboBox2.Size = new System.Drawing.Size(181, 26);
             this.WageComboBox2.TabIndex = 86;
             // 
             // label52
@@ -1228,7 +1245,7 @@
             // 
             // Wage1
             // 
-            this.Wage1.Location = new System.Drawing.Point(835, 37);
+            this.Wage1.Location = new System.Drawing.Point(842, 37);
             this.Wage1.Name = "Wage1";
             this.Wage1.Size = new System.Drawing.Size(102, 26);
             this.Wage1.TabIndex = 4;
@@ -1320,7 +1337,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Location = new System.Drawing.Point(831, 14);
+            this.label16.Location = new System.Drawing.Point(838, 14);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(102, 20);
             this.label16.TabIndex = 32;
@@ -1894,6 +1911,18 @@
             this.tabPage5.Text = "Settings";
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
+            // buttonShowExpenses
+            // 
+            this.buttonShowExpenses.BackColor = System.Drawing.Color.Red;
+            this.buttonShowExpenses.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonShowExpenses.Location = new System.Drawing.Point(593, 348);
+            this.buttonShowExpenses.Name = "buttonShowExpenses";
+            this.buttonShowExpenses.Size = new System.Drawing.Size(98, 61);
+            this.buttonShowExpenses.TabIndex = 76;
+            this.buttonShowExpenses.Text = "Show last 5 Record";
+            this.buttonShowExpenses.UseVisualStyleBackColor = false;
+            this.buttonShowExpenses.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // GOF_59
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -1978,9 +2007,9 @@
         private System.Windows.Forms.Button BtnWageGetPayments;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox incTxt1;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox incTxt2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBoxIncomeType_Of_Sale;
         private System.Windows.Forms.Label label24;
@@ -2044,7 +2073,7 @@
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button buttonShowRecordsExpenses;
         private System.Windows.Forms.ComboBox comboBox13;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
@@ -2053,7 +2082,7 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.ComboBox comboBox17;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.ComboBox comboBox18;
+        private System.Windows.Forms.ComboBox comboBoxIncomePayment_Method;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button button32;
@@ -2086,15 +2115,17 @@
         private System.Windows.Forms.DateTimePicker Wage4;
         private System.Windows.Forms.DateTimePicker Wage5;
         private System.Windows.Forms.DateTimePicker Emp11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker incDtm;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ComboBox comboBoxIncomeCategory;
         private System.Windows.Forms.Button incomebutton6;
-        private System.Windows.Forms.Button incomebutton5;
+        private System.Windows.Forms.Button incomebuttonAddNewPaymentMethod;
         private System.Windows.Forms.Button incomebutton4;
         private System.Windows.Forms.Button incomebutton3;
         private System.Windows.Forms.Button incomebutton2;
         private System.Windows.Forms.Button incomebutton1;
+        private System.Windows.Forms.Button incomebutton5;
+        private System.Windows.Forms.Button buttonShowExpenses;
     }
 }
 
