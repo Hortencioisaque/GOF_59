@@ -733,7 +733,8 @@ namespace G
                                 Emp8.AppendText(PostCode.ToString());
                                 Emp9.AppendText(Nino.ToString());
                                 Emp10.AppendText(Email.ToString());
-                                Emp11.Value = new DateTime(Convert.ToInt64(Convert.ToDecimal(StartDate)));// converting lo long
+                                Emp11.Text = StartDate.ToString();
+                                //Emp11.Value = new DateTime(Convert.ToInt64(Convert.ToDecimal(StartDate)));// converting lo long
 
                             }
 
@@ -1733,24 +1734,95 @@ namespace G
         //
 
         //
-        //Start of Selecting expenses records
+        //START of Selecting expenses records for user to edit or delete recors
         //
         
         private void button26_Click(object sender, EventArgs e)
-        { }
+        {
+            richTextBox3.Clear();
+
+            using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+            {
+                using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses", connection))// selecting table from db
+                {
+                    connection.Open();
+
+
+                    DataTable table = new DataTable();
+                    OleDbDataAdapter adapter = new OleDbDataAdapter();
+                    adapter.SelectCommand = selectCommand;
+                    adapter.Fill(table);
+
+                    foreach (DataRow row in table.Rows)
+                    {
+                        object ExpensesBillRef = row["Bill_Ref"];
+                        string strExpensesBillRef = ExpensesBillRef + "";
+
+                        if (exp2.Text == strExpensesBillRef) //collecting record by it's reference to edit or delete
+                        {
+                            exp2.Clear();// cleaering filed
+
+                            //colecting data as Anchor object
+                            object CompanyExpensesName = row["Company_EXPENSES_Name"];
+                            object CategoryExpensesName = row["Category_EXPENSES_Name"];
+                            object BillTypeExpensesName = row["Bill_type_EXPENSES_Name"];
+                            object ExpensesInfo = row["Info"];                            
+                            object ExpensesBillAmoutNet = row["Bill_amount_net"];
+                            object ExpensesBillAfetTax = row["Bill_amount_after_Tax"];
+                            object ExpensesBillGross = row["Bill_gross"];
+                            object ExpensesDateofBilling = row["Date_of_Billing"];
+
+                            //converting data as objects into string
+                            string strIncomeCategoryName = CompanyExpensesName + "";
+                            string strCategoryExpensesName = CategoryExpensesName + "";
+                            string strBillTypeExpensesName = BillTypeExpensesName + "";
+                            string strExpensesInfo = ExpensesInfo + "";                            
+                            string strExpensesBillAmoutNet = ExpensesBillAmoutNet + "";
+                            string strExpensesBillAfetTax = ExpensesBillAfetTax + "";
+                            string strExpensesBillGross = ExpensesBillGross + "";
+                            string strExpensesDateofBilling = ExpensesDateofBilling + "";
+
+                            //displaying db recors into text box
+                            richTextBox3.AppendText("Details of the Last 5 Expenses Record Added :    " + Environment.NewLine);
+                            richTextBox3.AppendText("Record " + "  -  " + strIncomeCategoryName + " " + strCategoryExpensesName + " " + BillTypeExpensesName + " " + strExpensesInfo + " " + strExpensesBillRef + " " + strExpensesBillAmoutNet + " " + strExpensesBillAfetTax + " " + strExpensesBillGross + "  " + strExpensesDateofBilling + Environment.NewLine);
+
+
+
+                            comboBoxExpensesCategory.Text = strIncomeCategoryName;
+                            comboBoxbuttonExpensesBill_Type.Text = strCategoryExpensesName;
+                            comboBoxExpensesCompanies.Text = strBillTypeExpensesName;
+                            exp1.AppendText(strExpensesInfo);
+                            exp2.AppendText(strExpensesBillRef);
+                            exp3.AppendText(strExpensesBillAmoutNet);
+                            exp4.AppendText(strExpensesBillAfetTax);
+                            exp5.AppendText(strExpensesBillGross);
+                            exp6.Text = strExpensesDateofBilling;
+                            //exp6.Value = new DateTime(Convert.ToInt64(Convert.ToDecimal(strExpensesDateofBilling)));// converting lo long
+                        }
+                    }
+                }
+            }        
+        }
+
+        //
+        //END of Selecting expenses records for user to edit or delete recors
+        //
+
 
 
         //
         //
-        //Start of Selecting expenses records
+        //Start of Selecting and showing the the last 5 expenses records in the text box
         //
         //
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            richTextBox3.Clear();
+
             using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
             {
-                using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses", connection))
+                using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses", connection))// selecting table from db
                 {
                     connection.Open();
 
@@ -1766,16 +1838,16 @@ namespace G
                     foreach (DataRow row in table.Rows)
                     {
                         // collect data here.
-                        icount++;
+                        icount++;// counting data from db
                     }
                     
                     
                     foreach (DataRow row in table.Rows)
                     {
                         icount2++;
-                        if (icount2 == icount - 4 || icount2 == icount - 3 || icount2 == icount - 2 || icount2 == icount -1 || icount2 == icount)
+                        if (icount2 == icount - 4 || icount2 == icount - 3 || icount2 == icount - 2 || icount2 == icount -1 || icount2 == icount) //collecting last 5 entries to display into textbox
                         {
-                            
+                            //colecting data as Anchor object
                             object CompanyExpensesName = row["Company_EXPENSES_Name"];
                             object CategoryExpensesName = row["Category_EXPENSES_Name"];
                             object BillTypeExpensesName = row["Bill_type_EXPENSES_Name"];
@@ -1786,6 +1858,7 @@ namespace G
                             object ExpensesBillGross = row["Bill_gross"];
                             object ExpensesDateofBilling = row["Date_of_Billing"];
 
+                            //converting data as objects into string
                             string strIncomeCategoryName = CompanyExpensesName + "";
                             string strCategoryExpensesName = CategoryExpensesName + "";
                             string strBillTypeExpensesName = BillTypeExpensesName + "";
@@ -1796,10 +1869,10 @@ namespace G
                             string strExpensesBillGross = ExpensesBillGross + "";
                             string strExpensesDateofBilling = ExpensesDateofBilling + "";
 
+                            //displaying db recors into text box
                             richTextBox3.AppendText("Details of the Last 5 Expenses Record Added :    " + Environment.NewLine);
                             richTextBox3.AppendText("Record " + icount2 + "  -  " + strIncomeCategoryName + " " + strCategoryExpensesName + " " + BillTypeExpensesName  + " " + strExpensesInfo + " " + strExpensesBillRef + " " + strExpensesBillAmoutNet + " " + strExpensesBillAfetTax + " " + strExpensesBillGross + "  " + strExpensesDateofBilling + Environment.NewLine);
-                            richTextBox3.AppendText(Environment.NewLine);
-
+                            
                         }
                     }
                 }
@@ -1808,7 +1881,7 @@ namespace G
 
         //
         //
-        //End of Selecting expenses records
+        //End of Selecting and showing the the last 5 expenses records in the text box
         //
         //
 

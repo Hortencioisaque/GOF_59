@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GOF_59));
             this.Settings = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonShowExpenses = new System.Windows.Forms.Button();
             this.exp6 = new System.Windows.Forms.DateTimePicker();
             this.button32 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.button27 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
             this.textBox27 = new System.Windows.Forms.TextBox();
-            this.buttonShowRecordsExpenses = new System.Windows.Forms.Button();
+            this.buttonExportExpensesData = new System.Windows.Forms.Button();
             this.comboBox13 = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
@@ -187,7 +188,6 @@
             this.Emp6 = new System.Windows.Forms.TextBox();
             this.Emp1 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.buttonShowExpenses = new System.Windows.Forms.Button();
             this.Settings.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -263,6 +263,18 @@
             this.tabPage1.Text = "Expenses";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // buttonShowExpenses
+            // 
+            this.buttonShowExpenses.BackColor = System.Drawing.Color.Red;
+            this.buttonShowExpenses.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonShowExpenses.Location = new System.Drawing.Point(593, 348);
+            this.buttonShowExpenses.Name = "buttonShowExpenses";
+            this.buttonShowExpenses.Size = new System.Drawing.Size(98, 61);
+            this.buttonShowExpenses.TabIndex = 76;
+            this.buttonShowExpenses.Text = "Show last 5 Record";
+            this.buttonShowExpenses.UseVisualStyleBackColor = false;
+            this.buttonShowExpenses.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // exp6
             // 
             this.exp6.Location = new System.Drawing.Point(308, 312);
@@ -335,11 +347,11 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label41.Location = new System.Drawing.Point(94, 9);
+            this.label41.Location = new System.Drawing.Point(21, 14);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(384, 25);
+            this.label41.Size = new System.Drawing.Size(500, 25);
             this.label41.TabIndex = 75;
-            this.label41.Text = "Enter Bill Reference before clicking";
+            this.label41.Text = "* Enter Bill Reference before Selecting Record";
             // 
             // button23
             // 
@@ -397,7 +409,7 @@
             this.panel6.Controls.Add(this.button27);
             this.panel6.Controls.Add(this.label43);
             this.panel6.Controls.Add(this.textBox27);
-            this.panel6.Controls.Add(this.buttonShowRecordsExpenses);
+            this.panel6.Controls.Add(this.buttonExportExpensesData);
             this.panel6.Controls.Add(this.comboBox13);
             this.panel6.Controls.Add(this.label44);
             this.panel6.Controls.Add(this.label45);
@@ -468,15 +480,15 @@
             this.textBox27.Size = new System.Drawing.Size(306, 26);
             this.textBox27.TabIndex = 5;
             // 
-            // buttonShowRecordsExpenses
+            // buttonExportExpensesData
             // 
-            this.buttonShowRecordsExpenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.buttonShowRecordsExpenses.Location = new System.Drawing.Point(416, 207);
-            this.buttonShowRecordsExpenses.Name = "buttonShowRecordsExpenses";
-            this.buttonShowRecordsExpenses.Size = new System.Drawing.Size(110, 61);
-            this.buttonShowRecordsExpenses.TabIndex = 7;
-            this.buttonShowRecordsExpenses.Text = "Get Expenses";
-            this.buttonShowRecordsExpenses.UseVisualStyleBackColor = true;
+            this.buttonExportExpensesData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
+            this.buttonExportExpensesData.Location = new System.Drawing.Point(416, 207);
+            this.buttonExportExpensesData.Name = "buttonExportExpensesData";
+            this.buttonExportExpensesData.Size = new System.Drawing.Size(110, 61);
+            this.buttonExportExpensesData.TabIndex = 7;
+            this.buttonExportExpensesData.Text = "Get Expenses";
+            this.buttonExportExpensesData.UseVisualStyleBackColor = true;
             // 
             // comboBox13
             // 
@@ -1911,18 +1923,6 @@
             this.tabPage5.Text = "Settings";
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
-            // buttonShowExpenses
-            // 
-            this.buttonShowExpenses.BackColor = System.Drawing.Color.Red;
-            this.buttonShowExpenses.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonShowExpenses.Location = new System.Drawing.Point(593, 348);
-            this.buttonShowExpenses.Name = "buttonShowExpenses";
-            this.buttonShowExpenses.Size = new System.Drawing.Size(98, 61);
-            this.buttonShowExpenses.TabIndex = 76;
-            this.buttonShowExpenses.Text = "Show last 5 Record";
-            this.buttonShowExpenses.UseVisualStyleBackColor = false;
-            this.buttonShowExpenses.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // GOF_59
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -2073,7 +2073,7 @@
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.Button buttonShowRecordsExpenses;
+        private System.Windows.Forms.Button buttonExportExpensesData;
         private System.Windows.Forms.ComboBox comboBox13;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
