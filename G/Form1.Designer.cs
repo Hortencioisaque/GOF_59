@@ -384,8 +384,9 @@
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(159, 61);
             this.button25.TabIndex = 1;
-            this.button25.Text = "EDIT Record";
+            this.button25.Text = "UPDATE Record";
             this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // submitExpBTN
             // 

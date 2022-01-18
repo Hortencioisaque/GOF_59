@@ -16,7 +16,7 @@ namespace G
     {
         string strID = string.Empty;//Employees - ID from the Employees table
         string mdfFile = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\horte\source\repos\GOF_59\GDB.mdb";
-        
+
         //string mdfFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\GDB.mdb";//path of the pc/user Documents folder
 
 
@@ -29,7 +29,7 @@ namespace G
         //
         //
         //***************************************************************************************************************************************************************************************************************************
-        
+
         private void Form1_Load(object sender, EventArgs e)// On load, displaying 
         {
             //
@@ -463,6 +463,7 @@ namespace G
         //
         //
         //***************************************************************************************************************************************************************************************************************************
+
 
 
         private void button5_Click_1(object sender, EventArgs e)//Employees // insert and select
@@ -1229,7 +1230,7 @@ namespace G
             //
             //Adding a new category Expenses to the database using a input message box
             //
-            List<string> List_Bill_Type_EXPENSES_Name = new List<string>();// to add all the categories to a list for latter to be checked if new entry already exists in the table
+            List<string> List_Company_EXPENSES_Name = new List<string>();// to add all the categories to a list for latter to be checked if new entry already exists in the table
             string NewBillTypeExpensesValue = Interaction.InputBox("Please insert a new category", "New Ctegory", "");
 
             richTextBox3.AppendText(NewBillTypeExpensesValue);
@@ -1248,7 +1249,7 @@ namespace G
                 using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
                 {
 
-                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses_Bill_type ([Bill_type_EXPENSES_Name]) VALUES (?)", connection))//insert command
+                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses_Bill_type ([Company_EXPENSES_Name]) VALUES (?)", connection))//insert command
                     using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses_Bill_type", connection))
                     {
 
@@ -1265,13 +1266,13 @@ namespace G
                         foreach (DataRow row in table.Rows)
                         {
 
-                            object nameValue = row["Bill_type_EXPENSES_Name"];
+                            object nameValue = row["Company_EXPENSES_Name"];
 
                             string strName = nameValue.ToString();
 
-                            if (!List_Bill_Type_EXPENSES_Name.Contains(strName))
+                            if (!List_Company_EXPENSES_Name.Contains(strName))
                             {
-                                List_Bill_Type_EXPENSES_Name.Add(strName);
+                                List_Company_EXPENSES_Name.Add(strName);
                             }
 
                             //
@@ -1279,7 +1280,7 @@ namespace G
                             //
                         }
 
-                        if (List_Bill_Type_EXPENSES_Name.Contains(NewBillTypeExpensesValue))
+                        if (List_Company_EXPENSES_Name.Contains(NewBillTypeExpensesValue))
                         {
                             MessageBox.Show("Category already exist");
                         }
@@ -1288,7 +1289,7 @@ namespace G
                         //
                         else
                         {
-                            insertCommand.Parameters.AddWithValue("Bill_type_EXPENSES_Name", NewBillTypeExpensesValue);
+                            insertCommand.Parameters.AddWithValue("Company_EXPENSES_Name", NewBillTypeExpensesValue);
 
                             insertCommand.ExecuteNonQuery();
 
@@ -1346,11 +1347,11 @@ namespace G
             {
                 using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
                 {
-                    using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM Expenses_Bill_type WHERE [Bill_type_EXPENSES_Name] = ?", connection))
+                    using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM Expenses_Bill_type WHERE [Company_EXPENSES_Name] = ?", connection))
                     {
                         connection.Open();
 
-                        deleteCommand.Parameters.AddWithValue("@Bill_type_EXPENSES_Name", comboBoxbuttonExpensesBill_Type.Text);
+                        deleteCommand.Parameters.AddWithValue("@Company_EXPENSES_Name", comboBoxbuttonExpensesBill_Type.Text);
 
                         deleteCommand.ExecuteNonQuery();
                     }
@@ -1402,7 +1403,7 @@ namespace G
             //
             //Adding a new category Expenses to the database using a input message box
             //
-            List<string> List_Company_EXPENSES_Name = new List<string>();// to add all the categories to a list for latter to be checked if new entry already exists in the table
+            List<string> List_Bill_type_EXPENSES_Name = new List<string>();// to add all the categories to a list for latter to be checked if new entry already exists in the table
             string NewComanyNameExpensesValue = Interaction.InputBox("Please insert a new category", "New Category", "");
 
             richTextBox3.AppendText(NewComanyNameExpensesValue);
@@ -1421,7 +1422,7 @@ namespace G
                 using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
                 {
 
-                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses_Companies ([Company_EXPENSES_Name]) VALUES (?)", connection))//insert command
+                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses_Companies ([Bill_type_EXPENSES_Name]) VALUES (?)", connection))//insert command
                     using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses_Companies", connection))
                     {
 
@@ -1438,13 +1439,13 @@ namespace G
                         foreach (DataRow row in table.Rows)
                         {
 
-                            object nameValue = row["Company_EXPENSES_Name"];
+                            object nameValue = row["Bill_type_EXPENSES_Name"];
 
                             string strName = nameValue.ToString();
 
-                            if (!List_Company_EXPENSES_Name.Contains(strName))
+                            if (!List_Bill_type_EXPENSES_Name.Contains(strName))
                             {
-                                List_Company_EXPENSES_Name.Add(strName);
+                                List_Bill_type_EXPENSES_Name.Add(strName);
                             }
 
                             //
@@ -1452,7 +1453,7 @@ namespace G
                             //
                         }
 
-                        if (List_Company_EXPENSES_Name.Contains(NewComanyNameExpensesValue))
+                        if (List_Bill_type_EXPENSES_Name.Contains(NewComanyNameExpensesValue))
                         {
                             MessageBox.Show("Category already exist");
                         }
@@ -1461,7 +1462,7 @@ namespace G
                         //
                         else
                         {
-                            insertCommand.Parameters.AddWithValue("Company_EXPENSES_Name", NewComanyNameExpensesValue);
+                            insertCommand.Parameters.AddWithValue("Bill_type_EXPENSES_Name", NewComanyNameExpensesValue);
 
                             insertCommand.ExecuteNonQuery();
 
@@ -1536,11 +1537,11 @@ namespace G
             {
                 using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
                 {
-                    using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM Expenses_Companies WHERE [Company_EXPENSES_Name] = ?", connection))
+                    using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM Expenses_Companies WHERE [Bill_type_EXPENSES_Name] = ?", connection))
                     {
                         connection.Open();
 
-                        deleteCommand.Parameters.AddWithValue("@Company_EXPENSES_Name", comboBoxExpensesCompanies.Text);
+                        deleteCommand.Parameters.AddWithValue("@Bill_type_EXPENSES_Name", comboBoxExpensesCompanies.Text);
 
                         deleteCommand.ExecuteNonQuery();
                     }
@@ -1642,7 +1643,7 @@ namespace G
                                         {
                                             using (OleDbConnection connection = new OleDbConnection(string.Format("Provider =Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))//using connection
                                             {
-                                                using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses ([Company_EXPENSES_Name],[Category_EXPENSES_Name],[Bill_type_EXPENSES_Name],[Info],[Bill_Ref],[Bill_amount_net],[Bill_amount_after_Tax],[Bill_gross],[Date_of_Billing]) VALUES (?,?,?,?,?,?,?,?,?)", connection))//insert command
+                                                using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO Expenses ([Bill_type_EXPENSES_Name],[Category_EXPENSES_Name],[Company_EXPENSES_Name],[Info],[Bill_Ref],[Bill_amount_net],[Bill_amount_after_Tax],[Bill_gross],[Date_of_Billing]) VALUES (?,?,?,?,?,?,?,?,?)", connection))//insert command
                                                 using (OleDbCommand selectCommand = new OleDbCommand("SELECT * FROM Expenses", connection))
                                                 {
                                                     connection.Open();
@@ -1654,7 +1655,7 @@ namespace G
                                                     OleDbDataAdapter adapter = new OleDbDataAdapter();
                                                     adapter.SelectCommand = selectCommand;
                                                     adapter.Fill(table);
-
+                                                    int icount = 0;
 
                                                     //
                                                     //start of checking if entry exists in database
@@ -1662,23 +1663,24 @@ namespace G
 
                                                     foreach (DataRow row in table.Rows)
                                                     {
-                                                        object billRef = row["Bill_Ref"];
+                                                        object ExpensesBillRef = row["Bill_Ref"];
+                                                        string strExpensesBillRef = ExpensesBillRef + "";
 
-                                                        strBillRef = billRef.ToString();
-                                                        //adding to a list
-                                                        ListBillRef.Add(strBillRef);
+                                                        if (exp2.Text == strExpensesBillRef) //collecting record by it's reference to edit or delete
+                                                        {
+                                                            icount++;
+                                                        }
                                                     }
-
-                                                    if (ListBillRef.Contains(Emp2.Text))
+                                                    if (icount > 0)
                                                     {
                                                         MessageBox.Show("Expense with this reference already exists");
 
                                                     }
                                                     else
                                                     {
-                                                        insertCommand.Parameters.AddWithValue("@Company_EXPENSES_Name", comboBoxExpensesCategory.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Bill_type_EXPENSES_Name", comboBoxExpensesCategory.Text);
                                                         insertCommand.Parameters.AddWithValue("@Category_EXPENSES_Name", comboBoxbuttonExpensesBill_Type.Text);
-                                                        insertCommand.Parameters.AddWithValue("@Bill_type_EXPENSES_Name", comboBoxExpensesCompanies.Text);
+                                                        insertCommand.Parameters.AddWithValue("@Company_EXPENSES_Name", comboBoxExpensesCompanies.Text);
                                                         insertCommand.Parameters.AddWithValue("@Info", exp1.Text);
                                                         insertCommand.Parameters.AddWithValue("@Bill_Ref", exp2.Text);
                                                         insertCommand.Parameters.AddWithValue("@Bill_amount_net", exp3.Text);
@@ -1727,6 +1729,12 @@ namespace G
                     }
                 }
             }
+
+            //richTextBox3.Clear();
+            exp1.Clear();
+            exp3.Clear();
+            exp4.Clear();
+            exp5.Clear();
         }
 
         //
@@ -1774,9 +1782,9 @@ namespace G
                         if (icount2 == icount - 4 || icount2 == icount - 3 || icount2 == icount - 2 || icount2 == icount - 1 || icount2 == icount) //collecting last 5 entries to display into textbox
                         {
                             //colecting data as Anchor object
-                            object CompanyExpensesName = row["Company_EXPENSES_Name"];
+                            object CompanyExpensesName = row["Bill_type_EXPENSES_Name"];
                             object CategoryExpensesName = row["Category_EXPENSES_Name"];
-                            object BillTypeExpensesName = row["Bill_type_EXPENSES_Name"];
+                            object BillTypeExpensesName = row["Company_EXPENSES_Name"];
                             object ExpensesInfo = row["Info"];
                             object ExpensesBillRef = row["Bill_Ref"];
                             object ExpensesBillAmoutNet = row["Bill_amount_net"];
@@ -1825,12 +1833,12 @@ namespace G
             exp3.Clear();
             exp4.Clear();
             exp5.Clear();
-            
+
 
             if (button26.Text == "")
             {
                 MessageBox.Show("Please Enter the Bill Reference number");
-            }            
+            }
             else
             {
                 using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
@@ -1844,6 +1852,9 @@ namespace G
                         adapter.SelectCommand = selectCommand;
                         adapter.Fill(table);
 
+                        int icount = 0;
+                        int icount2 = 0;
+
                         foreach (DataRow row in table.Rows)
                         {
                             object ExpensesBillRef = row["Bill_Ref"];
@@ -1851,12 +1862,25 @@ namespace G
 
                             if (exp2.Text == strExpensesBillRef) //collecting record by it's reference to edit or delete
                             {
+                                icount++;
+                            }
+                        }
+
+                        foreach (DataRow row in table.Rows)
+                        {
+                            object ExpensesBillRef = row["Bill_Ref"];
+                            string strExpensesBillRef = ExpensesBillRef + "";
+
+                            icount2++;
+
+                            if (exp2.Text == strExpensesBillRef && icount == 1)//collecting record by it's reference to edit or delete
+                            {
                                 exp2.Clear();// cleaering filed
 
                                 //colecting data as Anchor object
-                                object CompanyExpensesName = row["Company_EXPENSES_Name"];
+                                object CompanyExpensesName = row["Bill_type_EXPENSES_Name"];
                                 object CategoryExpensesName = row["Category_EXPENSES_Name"];
-                                object BillTypeExpensesName = row["Bill_type_EXPENSES_Name"];
+                                object BillTypeExpensesName = row["Company_EXPENSES_Name"];
                                 object ExpensesInfo = row["Info"];
                                 object ExpensesBillAmoutNet = row["Bill_amount_net"];
                                 object ExpensesBillAfetTax = row["Bill_amount_after_Tax"];
@@ -1890,6 +1914,14 @@ namespace G
                                 exp6.Text = strExpensesDateofBilling;
                                 //exp6.Value = new DateTime(Convert.ToInt64(Convert.ToDecimal(strExpensesDateofBilling)));// converting lo long
                             }
+                            else if (icount < 1 && icount2 == 1)
+                            {
+                                MessageBox.Show("None found");
+                            }
+                            else if (icount > 1 && icount2 == 1)
+                            {
+                                MessageBox.Show("More then 1 record with the same reference");
+                            }
                         }
                     }
                 }
@@ -1898,6 +1930,71 @@ namespace G
 
         //
         //END of Selecting expenses records for user to edit or delete recors
+        //
+
+
+
+        //
+        //START of editing expenses records
+        //
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            
+            richTextBox3.Clear();
+            exp1.Clear();
+            exp3.Clear();
+            exp4.Clear();
+            exp5.Clear();
+            
+
+            using (OleDbConnection connection = new OleDbConnection(string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", mdfFile)))
+            {
+                using (OleDbCommand updateCommand = new OleDbCommand("UPDATE Expenses SET [Bill_type_EXPENSES_Name] = ?, [Category_EXPENSES_Name] = ?, [Company_EXPENSES_Name] = ?, [Info] = ?, [Bill_Ref] = ?, [Bill_amount_net] = ?, [Bill_amount_after_Tax] = ?, [Bill_gross] = ?, [Date_of_Billing] = ? WHERE [Bill_Ref] = ?", connection))
+                {
+                    connection.Open();
+
+                    //updateCommand.Parameters.AddWithValue("@Category", "Drink");
+
+                    updateCommand.Parameters.AddWithValue("@Bill_type_EXPENSES_Name", comboBoxExpensesCategory.Text);
+                    updateCommand.Parameters.AddWithValue("@Category_EXPENSES_Name", comboBoxbuttonExpensesBill_Type.Text);
+                    updateCommand.Parameters.AddWithValue("@Company_EXPENSES_Name", comboBoxExpensesCompanies.Text);
+                    updateCommand.Parameters.AddWithValue("@Info", exp1.Text);
+                    updateCommand.Parameters.AddWithValue("@Bill_Ref", exp2.Text);
+                    updateCommand.Parameters.AddWithValue("@Bill_amount_net", exp3.Text);
+                    updateCommand.Parameters.AddWithValue("@Bill_amount_after_Tax", exp4.Text);
+                    updateCommand.Parameters.AddWithValue("@Bill_gross", exp5.Text);
+                    updateCommand.Parameters.AddWithValue("@Date_of_Billing", exp6.Value);
+
+                    //update records Using the Bill Reference
+
+                    updateCommand.ExecuteNonQuery();
+
+                    //
+                    //START of Showing what has been updated into the database
+                    //
+                    richTextBoxEmp.AppendText("Records Updated:    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(Environment.NewLine);
+                    richTextBoxEmp.AppendText(comboBoxExpensesCategory.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(comboBoxbuttonExpensesBill_Type.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(comboBoxExpensesCompanies.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(exp1.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(exp2.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(exp3.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(exp4.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(exp5.Text + "    " + Environment.NewLine);
+                    richTextBoxEmp.AppendText(exp6.Value + "    " + Environment.NewLine);
+
+
+                    //
+                    //END of Showing what has been updated into the database
+                    //
+                }
+            }
+        }
+
+        //
+        //END of editing expenses records
         //
 
 
@@ -1980,10 +2077,10 @@ namespace G
                 //
                 //START of clearing fields and comboBox to update comboBox with new records
                 //
-                
+
                 //comboBoxIncomeCategory.Items.Clear();
                 //comboBoxIncomeCategory.ResetText();
-                
+
                 //
                 //END of clearing fields and comboBox to update comboBox with new records
                 //
@@ -2221,10 +2318,10 @@ namespace G
                 //
                 //START of clearing fields and comboBox to update comboBox with new records
                 //
-                
+
                 //comboBoxIncomeType_Of_Sale.Items.Clear();
                 //comboBoxIncomeType_Of_Sale.ResetText();
-                
+
                 //
                 //END of clearing fields and comboBox to update comboBox with new records
                 //
@@ -2475,7 +2572,7 @@ namespace G
         // Submit
         private void incomebutton6_Click(object sender, EventArgs e)
         {
-            
+
             //
             //
             //START of Adding a new Employee
@@ -2509,7 +2606,7 @@ namespace G
                         adapter.SelectCommand = selectCommand;
                         adapter.Fill(table);
 
-                        int iEntryCount = 0;
+                        //int iEntryCount = 0;
 
 
 
@@ -2546,14 +2643,14 @@ namespace G
                         //END of Showing what has been added to the database
                         //
                     }
-                    
+
                 }
-                
+
             }
             //
             //END of Adding a new Income
             //
-            
+
         }
 
 
@@ -2867,6 +2964,6 @@ namespace G
         private void richTextBox3_TextChanged(object sender, EventArgs e)
         { }
 
-        
+
     }
 }
